@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = @lecture.posts.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    @hasLike = @lecture.likes.where(lecture_id:@lecture.id, user_id: current_user.id).blank? if current_user
   end
 
   def show
@@ -16,6 +17,21 @@ class PostsController < ApplicationController
   end
 
   def edit
+  end
+    def like
+    if Like.create(user_id: session[:user_id],lecture_id: @lecture.id, user_id: current_user.id)
+      redirect_to :back
+    else
+      render :show, notice: 'Like fail'
+    end
+   end
+
+  def dislike
+    if Like.find_by(user_id: current_user.id,lecture_id: @lecture.id, user_id: current_user.id).destroy
+      redirect_to :back
+    else
+      render :show, notice: 'Like success'
+    end
   end
 
   def create

@@ -8,6 +8,14 @@ Rails.application.routes.draw do
   resources :lectures do
     resources :posts 
   end
+    resources :lectures do
+    resources :posts do
+    member do
+      post 'like'
+      post 'dislike'
+    end
+    end
+    end
   root 'home#index'
   get 'home/major'
   get 'home/professor'

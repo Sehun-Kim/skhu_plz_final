@@ -9,7 +9,11 @@
     </tr>
   </thead>
 
-
+<p id="notice"><%= notice %></p>
+<h1>
+  <%= "좋아요 갯수 #{@lecture.likes.count}" %>
+</h1>
+<%= likeBtn(@hasLike) %>
   <tbody>
    <% @posts.each do |post| %>
     <tr>
