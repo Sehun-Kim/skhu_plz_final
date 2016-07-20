@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize_action_for @post
   end
  
   def like
@@ -51,9 +52,10 @@ class PostsController < ApplicationController
   end
 
   def update
+    authorize_action_for @post
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to [@post.lecture, @post], notice: 'Post was successfully updated.' }
+        format.html { redirect_to [@post.lecture, @post], notice: '게시물이 수정되었습니다.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -63,9 +65,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    authorize_action_for @post
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to lecture_posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to lecture_posts_url, notice: '게시물이 삭제되었습니다.' }
       format.json { head :no_content }
     end
   end
