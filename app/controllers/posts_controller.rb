@@ -18,13 +18,14 @@ class PostsController < ApplicationController
 
   def edit
   end
-    def like
-    if Like.create(user_id: session[:user_id],lecture_id: @lecture.id, user_id: current_user.id)
-      redirect_to :back
-    else
-      render :show, notice: 'Like fail'
-    end
+ 
+  def like
+   if Like.create(user_id: session[:user_id],lecture_id: @lecture.id, user_id: current_user.id)
+    redirect_to :back
+   else
+    render :show, notice: 'Like fail'
    end
+  end
 
   def dislike
     if Like.find_by(user_id: current_user.id,lecture_id: @lecture.id, user_id: current_user.id).destroy
