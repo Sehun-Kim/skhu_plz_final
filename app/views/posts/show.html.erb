@@ -1,14 +1,21 @@
 <h2>Post Preview</h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class='post'>
+  <div class="title">
+    <h3>제목:
+    <%= @post.title %></h3>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+  <div class="content">
+    <%= simple_format @post.content %>
+  </div>
+
+  <div class="user">
+    <strong>작성자</strong>
+    <%= @post.user.present? ? @post.user.email : "an anonymous user" %>,
+  </div>
+</div>
+
 
 
 <hr>

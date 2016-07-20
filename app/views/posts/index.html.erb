@@ -5,6 +5,7 @@
     <tr>
       <th>제목</th>
       <th>작성 시간</th>
+      <th>작성자</th>
       <th>Data actions</th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
     <tr>
       <td><%= post.title %> <small>( <%= post.comments.size %> )</small></td>
       <td><%= post.created_at %></td>
+      <td><%= post.user.present? ? post.user.email : "n/a" %></td>
       <td>
         <%= link_to 'Show', [post.lecture, post], class:'btn btn-default' %>
         <%= link_to 'Edit', edit_lecture_post_path(post.lecture, post), class:'btn btn-default' %>
