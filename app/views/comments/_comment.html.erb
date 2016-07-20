@@ -1,4 +1,5 @@
 <li id="comment_<%=comment.id %>">
+  <strong><%= comment.user.present? ? comment.user.email : "n/a" %></strong>:<br>
   <%= comment.body %>,
   <%= time_ago_in_words(comment.created_at) %> ago
   <%= link_to fa_icon("times-circle-o"), [comment.post, comment], method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
