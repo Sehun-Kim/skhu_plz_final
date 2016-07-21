@@ -6,14 +6,9 @@
       <th>제목</th>
       <th>작성 시간</th>
       <th>작성자</th>
-      <th>Data actions</th>
     </tr>
   </thead>
 
-<%= form_tag(lecture_posts_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
-<% end %>
 
 <p id="notice"><%= notice %></p>
 <h1>
@@ -23,19 +18,20 @@
   <tbody>
    <% @posts.each do |post| %>
     <tr>
-      <td><%= post.title %> <small>( <%= post.comments.size %> )</small></td>
-      <td><%= post.created_at %></td>
+      <td><%= link_to post.title, [post.lecture, post] %> <small>( <%= post.comments.size %> )</small></td>
+      <td><%= post.created_at.strftime("%I %B %d, %Y") %></td>
       <td><%= post.user.present? ? post.user.email : "n/a" %></td>
-      <td>
-        <%= link_to 'Show', [post.lecture, post], class:'btn btn-default' %>
-        <% if post.user.email == current_user.email %>
-          <%= link_to 'Edit', edit_lecture_post_path(post.lecture, post), class:'btn btn-default' %>
-          <%= link_to 'Destroy', [post.lecture, post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' %>
-        <% end %>
-      </td>
     </tr>
   <% end %>
   </tbody>
 </table>
+
+<%= form_tag(lecture_posts_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+<br>
+
+
 <%= link_to '글쓰기', new_lecture_post_path, class: 'btn btn-default' %>
 <%= will_paginate @posts %>
