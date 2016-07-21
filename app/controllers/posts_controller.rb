@@ -31,7 +31,7 @@ class PostsController < ApplicationController
    if Like.create(user_id: session[:user_id],lecture_id: @lecture.id, user_id: current_user.id)
     redirect_to :back
    else
-    render :show, notice: 'Like fail'
+    render :show, notice: '실패'
    end
   end
 
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     if Like.find_by(user_id: current_user.id,lecture_id: @lecture.id, user_id: current_user.id).destroy
       redirect_to :back
     else
-      render :show, notice: 'Like success'
+      render :show, notice: '성공'
     end
   end
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to [@post.lecture, @post], notice: 'Post was successfully created.' }
+        format.html { redirect_to [@post.lecture, @post], notice: '게시글이 작성되었습니다.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
