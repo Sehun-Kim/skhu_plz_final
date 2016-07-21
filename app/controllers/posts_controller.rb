@@ -6,7 +6,14 @@ class PostsController < ApplicationController
 
   def index
     @posts = @lecture.posts.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    if params[:search]
+      @posts = @posts.search(params[:search]).paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    else
+      @posts = @lecture.posts.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    end
+    
     @hasLike = @lecture.likes.where(lecture_id:@lecture.id, user_id: current_user.id).blank? if current_user
+  
   end
 
   def show
