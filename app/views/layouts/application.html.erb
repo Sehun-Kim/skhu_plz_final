@@ -32,14 +32,15 @@
   
   
 </head>
-
+    <body class = "intro-header">
     <%= render :partial => 'layouts/header' %>
     <div class="container">
       <%= render partial: "shared/flash_messages", flash: flash %>
 
       <%= content_for?(:post_layout) ? content_for(:post_layout) : yield %>
     </div>
-    
+    <%= render :partial => 'layouts/banner' %>
+    </body>
   <!-- jQuery -->
   <script src="assets/jquery.js"></script>
 
