@@ -7,13 +7,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
     
+    
   <title>SKHU강의평가</title>
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   
-  <!-- Bootstrap Core CSS -->
-  <link href="assets/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link href="assets/landing-page.css" rel="stylesheet">
@@ -22,14 +22,6 @@
   <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="assets/http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  
-  
   
 </head>
     <body class = "intro-header">
@@ -39,7 +31,34 @@
 
       <%= content_for?(:post_layout) ? content_for(:post_layout) : yield %>
     </div>
-    <%= render :partial => 'layouts/banner' %>
+        <footer>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                   <ul class="list-inline">
+                        <li>
+                            <a href="http://www.skhu.ac.kr">성공회대학교</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#">성공회대 멋쟁이사자처럼</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#">성공회대 멋사 페이스북</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; 성공회대학교 멋사 4기 김세훈/김은석</p>
+                </div>
+            </div>
+
+        </footer>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
     </body>
   <!-- jQuery -->
   <script src="assets/jquery.js"></script>
