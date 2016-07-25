@@ -1,4 +1,22 @@
 <h2><%= @lecture.name %> 게시판입니다.</h2>
+<a href="/home/show_professor/<%=@lecture.professor_id%>"><%= @lecture.professor.name %></a>교수
+ 
+  <p id="count"><%=@lecture.avg.round(1)%> 점 (<%=@lecture.stars.count%> 명)</p>
+  <%=form_tag(lecture_stars_path, method: "post") do %>
+    <input type="hidden" name="id" value="<%=@lecture.id%>">
+    <span class="star-rating small">
+      <input type="radio" name="rating" value="1"><i></i>
+      <input type="radio" name="rating" value="2"><i></i>
+      <input type="radio" name="rating" value="3"><i></i>
+      <input type="radio" name="rating" value="4"><i></i>
+      <input type="radio" name="rating" value="5"><i></i>
+    </span>
+    <br>
+    <button class="btn btn-success" href="#" role="button">평가하기</button>
+  <% end %>
+
+
+
 
 <table class="table">
   <thead>

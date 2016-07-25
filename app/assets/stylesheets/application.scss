@@ -10,6 +10,8 @@ $navbar-default-link-hover-bg: black;
 @import 'comments';
 @import "font-awesome";
 @import "posts";
-@import "bootstrap.min";
+@import "bootstrap";
+@import "landing-page";
+@import "stars";
 
 body { padding-top: 60px; }

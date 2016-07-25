@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   end
   
   resources :lectures do
+    resources :stars
+  end
+  
+  resources :lectures do
     resources :posts do
       member do
         post 'like'
