@@ -25,12 +25,18 @@
   
 </head>
     <body class = "intro-header">
+        <div class="wrap">
+          <div class="content">
+
     <%= render :partial => 'layouts/header' %>
     <div class="container">
       <%= render partial: "shared/flash_messages", flash: flash %>
 
       <%= content_for?(:post_layout) ? content_for(:post_layout) : yield %>
     </div>
+           </div>
+         </div>
+
         <footer>
 
         <div class="container">
