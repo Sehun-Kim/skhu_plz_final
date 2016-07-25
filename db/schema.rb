@@ -80,9 +80,12 @@ ActiveRecord::Schema.define(version: 20160725071552) do
     t.integer  "lecture_id"
     t.integer  "user_id"
     t.integer  "score",      default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "stars", ["lecture_id"], name: "index_stars_on_lecture_id"
+  add_index "stars", ["user_id"], name: "index_stars_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
