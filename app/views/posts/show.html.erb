@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h2>Post Preview</h2>
 
 <p id="notice"><%= notice %></p>
@@ -5,6 +6,10 @@
   <%= "좋아요 갯수 #{@post.likes.count}" %>
 </h1>
 <%= likeBtn(@hasLike) %>
+=======
+<h2>게시글 보기</h2>
+
+>>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
 <div class='post'>
   <div class="title">
     <h3>제목:
@@ -17,14 +22,22 @@
 
   <div class="user">
     <strong>작성자</strong>
+<<<<<<< HEAD
     <%= User.find(@post.user_id).email %>
+=======
+    <%= @post.user.present? ? @post.user.email : "an anonymous user" %>,
+>>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
   </div>
 </div>
 
 
 
 <hr>
+<<<<<<< HEAD
 <% if @post.user_id == current_user.id %>
+=======
+<% if @post.user.email == current_user.email %>
+>>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
   <%= link_to 'Edit', edit_lecture_post_path(@post.lecture, @post), class:'btn btn-default' %>
   <%= link_to 'Destroy', [@post.lecture, @post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' %>
 <% end %>
