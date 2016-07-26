@@ -34,20 +34,12 @@ ActiveRecord::Schema.define(version: 20160725071552) do
 
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"
-<<<<<<< HEAD
     t.integer  "post_id"
-=======
-    t.integer  "lecture_id"
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   add_index "likes", ["post_id"], name: "index_likes_on_post_id"
-=======
-  add_index "likes", ["lecture_id"], name: "index_likes_on_lecture_id"
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
   add_index "likes", ["user_id"], name: "index_likes_on_user_id"
 
   create_table "majors", force: :cascade do |t|
@@ -88,20 +80,10 @@ ActiveRecord::Schema.define(version: 20160725071552) do
     t.integer  "lecture_id"
     t.integer  "user_id"
     t.integer  "score",      default: 0
-<<<<<<< HEAD
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-=======
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "stars", ["lecture_id"], name: "index_stars_on_lecture_id"
-  add_index "stars", ["user_id"], name: "index_stars_on_user_id"
-
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

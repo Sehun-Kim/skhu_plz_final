@@ -1,9 +1,13 @@
-<h2><%= @post.title %></h2>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"><h2><%= @post.title %></h2>
+  <p id="notice"><%= notice %></p></div>
+  <div class="col-md-4"><h2><p align="right"><%= "좋아요 #{@post.likes.count}" %></p></h2></div>
+</div>
 
-<p id="notice"><%= notice %></p>
-<h1>
-  <%= "좋아요 #{@post.likes.count}" %>
-</h1>
+
+
+
 <%= likeBtn(@hasLike) %>
 <div class='post'>
   
