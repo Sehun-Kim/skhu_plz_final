@@ -1,17 +1,4 @@
 class StarsController < ApplicationController
-<<<<<<< HEAD
-  before_action :authenticate_user!, only: [ :create, :edit, :update, :destroy ]
-  
-  
-  def create
-    Star.create(lecture_id: params[:id], user_id: current_user.id, score: params[:rating].to_i)
-    redirect_to :back
-  end
-
-  def destroy
-   
-  end
-=======
   before_action :authenticate_user!, only: [ :create, :destroy ]
   before_action :set_lecture
   before_action :set_star, only: :destroy
@@ -44,5 +31,4 @@ class StarsController < ApplicationController
     def star_params
       params.require(:star).permit(:score)
     end
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
 end

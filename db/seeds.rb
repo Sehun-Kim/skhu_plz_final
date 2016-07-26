@@ -14,7 +14,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-<<<<<<< HEAD
 Post.create(title: "연습1입니다.", content: "되라되라", lecture_id: 1, user_id: 1)
 Post.create(title: "연습2입니다.", content: "되라되라", lecture_id: 1, user_id: 1)
 Post.create(title: "연습3입니다.", content: "되라되라", lecture_id: 1, user_id: 1)
@@ -22,8 +21,6 @@ Post.create(title: "연습4입니다.", content: "되라되라", lecture_id: 2, 
 Post.create(title: "연습5입니다.", content: "되라되라", lecture_id: 2, user_id: 1)
 Post.create(title: "연습6입니다.", content: "되라되라", lecture_id: 2, user_id: 1)
 Post.create(title: "연습7입니다.", content: "되라되라", lecture_id: 3, user_id: 1)
-=======
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
 
 Major.create(name: '경영학부')
 Major.create(name: '글로컬IT학과')

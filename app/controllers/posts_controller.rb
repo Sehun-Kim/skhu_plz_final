@@ -1,12 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :edit, :create, :update, :destroy ]
-<<<<<<< HEAD
   before_action :set_post, only: [:show, :edit, :update, :destroy, :like, :dislike]
   before_action :set_lecture, exception: [:like, :dislike]
-=======
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_lecture
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
   
 
   def index
@@ -16,7 +11,6 @@ class PostsController < ApplicationController
     else
       @posts = @lecture.posts.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
     end
-<<<<<<< HEAD
     @use = User.all
     
   end
@@ -25,14 +19,6 @@ class PostsController < ApplicationController
      @hasLike = @post.likes.where(user_id: current_user.id, post_id: @post.id).blank? if current_user
      @use = User.find_by_id(@post)
     
-=======
-    
-    @hasLike = @lecture.likes.where(lecture_id:@lecture.id, user_id: current_user.id).blank? if current_user
-  
-  end
-
-  def show
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
   end
 
   def new
@@ -44,11 +30,7 @@ class PostsController < ApplicationController
   end
  
   def like
-<<<<<<< HEAD
    if Like.create(user_id: current_user.id,post_id: @post.id)
-=======
-   if Like.create(user_id: session[:user_id],lecture_id: @lecture.id, user_id: current_user.id)
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
     redirect_to :back
    else
     render :show, notice: '실패'
@@ -56,11 +38,7 @@ class PostsController < ApplicationController
   end
 
   def dislike
-<<<<<<< HEAD
     if Like.find_by(post_id: @post.id, user_id: current_user.id).destroy
-=======
-    if Like.find_by(user_id: current_user.id,lecture_id: @lecture.id, user_id: current_user.id).destroy
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
       redirect_to :back
     else
       render :show, notice: '성공'
@@ -69,11 +47,7 @@ class PostsController < ApplicationController
 
   def create
     @post = @lecture.posts.new(post_params)
-<<<<<<< HEAD
     @post.user_id = current_user.id
-=======
-    @post.user = current_user
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
 
     respond_to do |format|
       if @post.save

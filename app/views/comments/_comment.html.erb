@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <li id="comment_<%=comment.id %>">
-=======
-<li id="comment_<%= comment.id %>">
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
   <strong><%= comment.user.present? ? comment.user.email : "n/a" %></strong>
   [<%= comment.created_at.strftime(" %Y년 %m월 %d일 %H시 %M분") %>]
   <% if comment.user.email == current_user.email %>
@@ -10,8 +6,4 @@
   <% end %>
   <br>
   <%= comment.body %>
-<<<<<<< HEAD
   </li>
-=======
-</li>
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea

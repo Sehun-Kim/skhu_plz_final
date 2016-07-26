@@ -163,12 +163,6 @@ h6 {
 }
 
 footer {
-<<<<<<< HEAD
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
-
-=======
     padding: 10px 0;
     background-color: #f8f8f8;
     position:fixed;
@@ -190,7 +184,6 @@ margin-top:-150px;
 
 
 
->>>>>>> 757ca0fdd669651c076604c41792f5a59d77e9ea
 p.copyright {
     margin: 15px 0 0;
 }
