@@ -1,0 +1,17 @@
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+$navbar-default-bg: #312312;
+$navbar-default-link-color: gray;
+$navbar-default-link-active-color: $light-orange;
+$navbar-default-link-hover-color: white;
+$navbar-default-link-hover-bg: black;
+
+
+@import 'comments';
+@import "font-awesome";
+@import "posts";
+@import "bootstrap";
+@import "landing-page";
+@import "stars";
+
+body { padding-top: 60px; }

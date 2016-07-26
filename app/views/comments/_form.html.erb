@@ -1,0 +1,14 @@
+<% comment = @post.comments.new %>
+<div id="comments_form_<%=@post.id%>">
+<%= simple_form_for([@post, comment], remote: true ) do | f | %>
+    <p style='text-align:right;'>
+      작성자: <%= current_user.email %>
+    </p>
+  <div class='form-inputs'>
+    <%= f.input :body, label: false, placeholder: '내용을 작성하세요.',  input_html: { rows: 5 } %>
+  </div>
+  <div class='form-actions'>
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,9 @@
+<li id="comment_<%=comment.id %>">
+  <strong><%= comment.user.present? ? comment.user.email : "n/a" %></strong>
+  [<%= comment.created_at.strftime(" %Y년 %m월 %d일 %H시 %M분") %>]
+  <% if comment.user.email == current_user.email %>
+    <%= link_to fa_icon("times-circle-o"), [comment.post, comment], method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+  <% end %>
+  <br>
+  <%= comment.body %>
+  </li>

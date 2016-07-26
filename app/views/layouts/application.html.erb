@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+    
+    
+  <title>SKHU강의평가</title>
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  
+
+  <!-- Custom CSS -->
+  <link href="assets/landing-page.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  
+</head>
+    <body class = "intro-header">
+    <%= render :partial => 'layouts/header' %>
+    <div class="container">
+      <%= render partial: "shared/flash_messages", flash: flash %>
+
+      <%= content_for?(:post_layout) ? content_for(:post_layout) : yield %>
+    </div>
+        <footer>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                   <ul class="list-inline">
+                        <li>
+                            <a href="http://www.skhu.ac.kr">성공회대학교</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#">성공회대 멋쟁이사자처럼</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#">성공회대 멋사 페이스북</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; 성공회대학교 멋사 4기 김세훈/김은석</p>
+                </div>
+            </div>
+
+        </footer>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+    </body>
+  <!-- jQuery -->
+  <script src="assets/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="assets/bootstrap.min.js"></script>  
+    
+</html>
