@@ -10,11 +10,12 @@ class StarsController < ApplicationController
     @star.score = params[:rating].to_i
     @star.user = current_user
     @star.save
-    redirect_to :back
+    redirect_to :back, :alert => "다시 평가를 원하시면 삭제하시고 다시 평가해주세요. 데헷"
   end
 
   def destroy
     @star.destroy
+    redirect_to :back
   end
   
   private
