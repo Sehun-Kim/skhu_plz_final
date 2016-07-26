@@ -1,15 +1,12 @@
-<h2>Post Preview</h2>
+<h2><%= @post.title %></h2>
 
 <p id="notice"><%= notice %></p>
 <h1>
-  <%= "좋아요 갯수 #{@post.likes.count}" %>
+  <%= "좋아요 #{@post.likes.count}" %>
 </h1>
 <%= likeBtn(@hasLike) %>
 <div class='post'>
-  <div class="title">
-    <h3>제목:
-    <%= @post.title %></h3>
-  </div>
+  
 
   <div class="content">
     <%= simple_format @post.content %>
