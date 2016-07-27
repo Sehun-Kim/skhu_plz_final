@@ -1,28 +1,60 @@
-<h2>수정 <%= resource_name.to_s.humanize %></h2>
+<h2>회원정보 수정 <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-group">
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"><div class="form-group">
     <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' } %>
   </div>
   <div class="form-group">
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-  </div>
+  </div></div>
+  <div class="col-md-4"></div>
+</div>
 
-  <div class="form-group">
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, input_html: { class: 'form-control' } %>
-  </div>
-  <div class="form-group">
-    <%= f.input :password_confirmation, required: false, input_html: { class: 'form-control' } %>
-  </div>
-  <div class="form-group">
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { class: 'form-control' } %>
-  </div>
-  <%= f.button :submit, "Update", class: 'btn btn-default' %>
-<% end %>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"> <div class="form-group">
+    <%= f.input :password, autocomplete: "off", placeholder: "새 비밀번호를 적어주세요", required: false, input_html: { class: 'form-control' } %>
+  </div></div>
+  <div class="col-md-4"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"><div class="form-group">
+    <%= f.input :password_confirmation, placeholder: "다시한번 적어주세요", required: false, input_html: { class: 'form-control' } %>
+  </div></div>
+  <div class="col-md-4"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"> <div class="form-group">
+    <%= f.input :current_password, placeholder: "현재 비밀번호를 적어주세요", required: true, input_html: { class: 'form-control' } %>
+  </div></div>
+  <div class="col-md-4"></div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"> <%= f.button :submit, "Update", class: 'btn btn-large btn-block btn-info' %>
+<% end %></div>
+  <div class="col-md-4"></div>
+</div>
+<br>
+
+  
+
+ 
+  
+ 
+ 
 
 <hr>
 
