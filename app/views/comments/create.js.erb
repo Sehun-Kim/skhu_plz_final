@@ -1,0 +1,6 @@
+<% if @comment.errors.size == 0 %>
+  $('<%=j render @comment %>').appendTo($("#comments_list_<%=@post.id %>")).hide().fadeIn('fast');
+  $("#comments_form_<%=@post.id %> form")[0].reset();
+<% else %>
+  alert("내용 작성하고...");
+<% end %>

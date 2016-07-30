@@ -1,0 +1,39 @@
+<h2><%= @lecture.name %> 게시판입니다.</h2>
+<a href="/home/show_professor/<%=@lecture.professor_id%>"><%= @lecture.professor.name %></a>교수
+ 
+<%= render :partial => "stars/star" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><p align="center">제목</p></th>
+      <th><p align="center">작성 시간</p></th>
+      <th><p align="center">작성자</p></th>
+      <th><p align="center">추천수</p></th>
+    </tr>
+  </thead>
+
+
+
+
+  <tbody>
+   <% @posts.each do |post| %>
+    <tr>
+      <td><%= link_to post.title, [post.lecture, post] %> <small>( <%= post.comments.size %> )</small></td>
+      <td><%= post.created_at.strftime(" %Y년 %m월 %d일 %H시 %M분") %></td>
+      <td><%=User.find_by_id(Post.find_by_id(post.id).user_id).email if post.user_id %></td>
+      <td><%= "좋아요 #{post.likes.count}" %>  </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= form_tag(lecture_posts_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+<br>
+
+
+<%= link_to '글쓰기', new_lecture_post_path, class: 'btn btn-default' %>
+<%= will_paginate @posts %>
