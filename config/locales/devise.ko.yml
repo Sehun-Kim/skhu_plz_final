@@ -54,4 +54,8 @@ ko:
       reset_password_instructions:
         subject: '비밀번호 변경 확인 메일'
       unlock_instructions:
+<<<<<<< HEAD
         subject: '계정 Unlock 메일'
+=======
+        subject: '계정 Unlock 메일'
+>>>>>>> 9a343294f3e61025159ddc29fadd85606f50ae47
