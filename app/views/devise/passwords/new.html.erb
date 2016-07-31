@@ -1,15 +1,35 @@
+<br>
+<br>
+
 <h2>비밀번호를 잊으셨나요?</h2>
+<br>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
+  
+  
+  
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">  <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
-  </div>
+  </div></div>
+  <div class="col-md-4"></div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"> <div class="form-actions">
+    <%= f.button :submit, "Send me reset password instructions", class: 'btn btn-large btn-block btn-info' %>
   </div>
-<% end %>
+<% end %></div>
+  <div class="col-md-4"></div>
+</div>
+
+
+
+
+
+ 
 
 <%= render "devise/shared/links" %>
