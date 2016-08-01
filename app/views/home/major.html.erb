@@ -1,3 +1,12 @@
-<% @maj.each do |m| %>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"><% @maj.each do |m| %>
 <a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-primary btn-lg btn-block"><%= m.name %></button></a>
-<%end%>
+<%end%></div>
+  <div class="col-md-4"></div>
+</div>
+
+
