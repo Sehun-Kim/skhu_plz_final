@@ -1,0 +1,29 @@
+<h2>자유게시판</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Data actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_fs.each do |post_f| %>
+      <tr>
+        <td><%= post_f.title %></td>
+        <td><%= post_f.description %></td>
+        <td>
+          <%= link_to 'Show', post_f, class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_post_f_path(post_f), class: 'btn btn-default' %>
+          <%= link_to 'Destroy', post_f, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '등록', new_post_f_path, class: 'btn btn-default' %>
