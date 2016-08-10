@@ -3,6 +3,7 @@ class CreateMajors < ActiveRecord::Migration
     create_table :majors do |t|
       t.string :name
 
+      t.integer :liberal
       t.timestamps null: false
     end
   end

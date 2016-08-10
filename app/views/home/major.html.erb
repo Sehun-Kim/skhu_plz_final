@@ -1,12 +1,32 @@
+   <style type="text/css">
+.test { color:yellow; background-color:#D2D1D2; padding:20px; }
+</style>
+
+
 <br>
 <br>
+
 
 <div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4"><% @maj.each do |m| %>
-<a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-primary btn-lg btn-block"><%= m.name %></button></a>
-<%end%></div>
-  <div class="col-md-4"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+ 
+<div class="test">
+    <div>
+      <% @maj.each do |m| %>
+      <%if m.liberal == 0%>
+      <a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-link btn-lg"><%= m.name %></button></a>
+      <%end%><%end%>
+    </div>  
+      <br>
+    <div>  
+      <% @maj.each do |m| %>
+      <%if m.liberal == 1%>
+      <a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-link btn-lg"><%= m.name %></button></a>
+      <%end%><%end%>
+    </div>
+    
+  </div>
+  <div class="col-md-2"></div>
 </div>
-
-
+</div>

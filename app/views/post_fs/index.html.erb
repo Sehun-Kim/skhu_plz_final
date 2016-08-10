@@ -1,11 +1,14 @@
+<br>
+<br>
+
 <h2>자유게시판</h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Data actions</th>
+      <th><p align="center">제목</p></th>
+      <th><p align="center">내용</p></th>
+      <th><p align="center">Action</p></th>
     </tr>
   </thead>
 
@@ -17,7 +20,7 @@
         <td>
           <%= link_to 'Show', post_f, class: 'btn btn-default' %>
           <%= link_to 'Edit', edit_post_f_path(post_f), class: 'btn btn-default' %>
-          <%= link_to 'Destroy', post_f, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+          <%= link_to 'Destroy', post_f, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </td>
       </tr>
     <% end %>
@@ -26,4 +29,4 @@
 
 <br>
 
-<%= link_to '등록', new_post_f_path, class: 'btn btn-default' %>
+<%= link_to '글쓰기', new_post_f_path, class: 'btn btn-default' %>

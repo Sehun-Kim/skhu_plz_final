@@ -1,5 +1,13 @@
-<% @lec.each do |m| %>
-<a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-primary btn-lg btn-block"><%= m.name %>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    
+    <% @lec.each do |m| %>
+<a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+  <br>
   <span class="star-rating supersmall">
           <% 1.upto(5) do |i| %>
             <% if i == m.avg.round(0) %>
@@ -12,3 +20,10 @@
   <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
 </button></a>
 <%end%>
+
+    
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+
