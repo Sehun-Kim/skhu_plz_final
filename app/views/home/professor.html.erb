@@ -1,3 +1,18 @@
+   <style type="text/css">
+.test1 { color:yellow; background-color:#F7FFBA; padding:20px; border-radius: 10px;}
+</style>
+
+
+ <script type="text/javascript">
+ $('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+ </script>
+ 
+ 
+ 
+ 
 
 <br>
 <br>
@@ -6,110 +21,70 @@
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8">
-      
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          ㄱ
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
+      <div class="test1">
+        
+        
+        <div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation"><a href="#ㄱ" aria-controls="home" role="tab" data-toggle="tab">ㄱ<span class="badge">63</span></a></li>
+    <li role="presentation"><a href="#ㄴ" aria-controls="profile" role="tab" data-toggle="tab">ㄴ<span class="badge">2</span></a></li>
+    <li role="presentation"><a href="#ㄷ" aria-controls="messages" role="tab" data-toggle="tab">ㄷ<span class="badge">0</span></a></li>
+    <li role="presentation"><a href="#ㄹ" aria-controls="settings" role="tab" data-toggle="tab">ㄹ<span class="badge">0</span></a></li>
+    <li role="presentation"><a href="#ㅁ" aria-controls="messages" role="tab" data-toggle="tab">ㅁ<span class="badge">2</span></a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="ㄱ">
         <% @pro.each do |p| %>
         <% if p.dis == 1 %>
-<a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a>
-<% end %>
-<%end%>
-          
-      </div>
+        <a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a><% end %>
+        <%end%>
     </div>
-  </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          ㄴ
-        </a>
-      </h4>
+    <div role="tabpanel" class="tab-pane fade in active" id="ㄴ">
+        <% @pro.each do |p| %>
+        <%if p.dis == 2%>
+        <a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a>
+        <% end %><% end %>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-<% @pro.each do |p| %>
-<%if p.dis == 2%>
-<a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a>
-<% end %><% end %>
-
-        
-      </div>
-    </div>
-  </div>
-  
-   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          ㄷ
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-      
+    <div role="tabpanel" class="tab-pane fade in active" id="ㄷ">
       <% @pro.each do |p| %>
       <%if p.dis == 3%>
-<a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a>
-<% end %><% end %>
-      
-      </div>
+      <a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a>
+      <% end %><% end %>
     </div>
-  </div>
-  
-   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingFour">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          ㄹ
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-      <div class="panel-body">
-      
+    <div role="tabpanel" class="tab-pane fade in active" id="ㄹ">
       <% @pro.each do |p| %>
       <%if p.dis == 4%>
-<a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a>
-<% end %><% end %>
-
-      
-      </div>
+      <a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a>
+      <% end %><% end %>
     </div>
-  </div>
-  
-   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingFive">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-          ㅁ
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-      <div class="panel-body">
-      
+    <div role="tabpanel" class="tab-pane fade in active" id="ㅁ">
       <% @pro.each do |p| %>
       <%if p.dis == 5%>
-<a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a>
-<% end %><% end %>
-
-      
-      </div>
+      <a href = "/home/show_professor/<%=p.id%>"><button type="button" class="btn btn-link"><%= p.name %></button></a>
+      <% end %><% end %>
     </div>
   </div>
+
+</div>
+        </div>
+        
+        <br>
+        <br>
+        
+        
+        
+        
+        
+        
+        
+        
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+
   
    <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingSix">
@@ -335,7 +310,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
       
       

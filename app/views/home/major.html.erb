@@ -1,5 +1,6 @@
    <style type="text/css">
-.test { color:yellow; background-color:#D2D1D2; padding:20px; }
+.test1 { color:yellow; background-color:#E5EDE2; padding:20px; border-radius: 10px;}
+.test2 { color:yellow; background-color:#F1E6E4; padding:20px; border-radius: 10px;}
 </style>
 
 
@@ -11,22 +12,25 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
  
-<div class="test">
+<div class="test1">
     <div>
       <% @maj.each do |m| %>
       <%if m.liberal == 0%>
-      <a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-link btn-lg"><%= m.name %></button></a>
+      <a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-default btn-lg btn-block"><%= m.name %></button></a>
       <%end%><%end%>
-    </div>  
+    </div>
+</div>
       <br>
+  <div class="test2">
     <div>  
       <% @maj.each do |m| %>
       <%if m.liberal == 1%>
-      <a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-link btn-lg"><%= m.name %></button></a>
+      <a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-default btn-lg"><%= m.name %></button></a>
       <%end%><%end%>
-    </div>
+    </div>    </div>
     
   </div>
   <div class="col-md-2"></div>
 </div>
-</div>
+
+
