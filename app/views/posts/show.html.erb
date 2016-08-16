@@ -1,35 +1,51 @@
+<style type="text/css">
+.title { color:black; background-color:white; padding:20px; border-radius: 10px;}
+.right {text-align:right;}
+</style>
+
+
+
 <div class="row">
   <div class="col-md-4"></div>
-  <div class="col-md-4"><h2><%= @post.title %></h2>
+  <div class="col-md-4"><h2 class="title"><%= @post.title %></h2>
   <p id="notice"><%= notice %></p></div>
-  <div class="col-md-4"><h2><p align="right"><%= "좋아요 #{@post.likes.count}" %></p></h2></div>
+  <div class="col-md-4"><h2 class="title"><p align="left"><%= likeBtn(@hasLike) %><%= " #{@post.likes.count}" %></p></h2></div>
 </div>
 
 
 
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
 
-<%= likeBtn(@hasLike) %>
-<div class='post'>
-  
+    <div class='post'>
 
-  <div class="content">
-    <%= simple_format @post.content %>
-  </div>
 
-  <div class="user">
-    <strong>작성자</strong>
-    <%= User.find(@post.user_id).email %>
-  </div>
-</div>
+      <div class="content">
+        <%= simple_format @post.content %>
+      </div>
 
+      <div class="user">
+        <strong>작성자</strong>
+        <%= User.find(@post.user_id).email %>
+      </div>
+    </div>
 
 
 <hr>
-<% if @post.user_id == current_user.id %>
-  <%= link_to 'Edit', edit_lecture_post_path(@post.lecture, @post), class:'btn btn-default' %>
-  <%= link_to 'Destroy', [@post.lecture, @post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' %>
-<% end %>
+  <div class="right">
+    <% if @post.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_lecture_post_path(@post.lecture, @post), class:'btn btn-default' %>
+      <%= link_to 'Destroy', [@post.lecture, @post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' %>
+    <% end %>
 
-<%= link_to 'Back', lecture_posts_path, class: 'btn btn-default' %>
+    <%= link_to 'Back', lecture_posts_path, class: 'btn btn-default' %>
+</div>
 
-<%= render :partial => "comments/comments" %>
+
+    <%= render :partial => "comments/comments" %>
+
+
+    </div>
+  <div class="col-md-1"></div>
+</div>

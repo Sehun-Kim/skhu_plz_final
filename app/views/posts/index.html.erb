@@ -1,57 +1,84 @@
-
-<h2><%= @lecture.name %> 게시판입니다.</h2>
-<a href="/home/show_professor/<%=@lecture.professor_id%>"><%= @lecture.professor.name %></a>교수
- 
-<%= render :partial => "stars/star" %>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th><p align="center">제목</p></th>
-      <th><p align="center">작성 시간</p></th>
-      <th><p align="center">작성자</p></th>
-      <th><p align="center">별점</p></th>
-      <th><p align="center">추천수</p></th>
-    </tr>
-  </thead>
+<style type="text/css">
+.test1 { color:black; background-color:white; padding:20px; border-radius: 10px;}
+.center {text-align:center; font-size: 35px;}
+.right {text-align:right;}
+.pro {font-size:15px;}
+</style>
 
 
-
-
-  <tbody>
-   <% @posts.each do |post| %>
-    <tr>
-      <td><%= link_to post.title, [post.lecture, post] %> <small>( <%= post.comments.size %> )</small></td>
-      <td><%= post.created_at.strftime(" %Y년 %m월 %d일 %H시 %M분") %></td>
-      <td><%=User.find_by_id(Post.find_by_id(post.id).user_id).email if post.user_id %></td>
-      <td>
-        <p><% @lecture.stars.reverse.each do |s| %>
-          <%if s.user.id == post.user_id %>
-            <span class="star-rating small">
-              <% 1.upto(5) do |i| %>
-                <% if i == s.score %>
-                  <i class="on"></i>
-                <% else %>
-                  <i></i>
-                <% end %>
-              <% end %>
-            </span>
-            <% end %>
-          <% end %>
-        </p>
-      </td>
-      <td><%= "좋아요 #{post.likes.count}" %>  </td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<%= form_tag(lecture_posts_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<font color="#63645A"><%= submit_tag "Search" %></font>
-<% end %>
 <br>
 
 
-<%= link_to '글쓰기', new_lecture_post_path, class: 'btn btn-default' %>
-<%= will_paginate @posts %>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="test1">
+      <span class="center"><%= @lecture.name %></span>   <a href="/home/show_professor/<%=@lecture.professor_id%>"><span class="pro"><%= @lecture.professor.name %></a>교수님</span><span class="right"><%= render :partial => "stars/star" %></span>
+
+
+
+
+      <br>
+
+
+
+
+      <br>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th><p align="center">제목</p></th>
+          <th><p align="center">작성 시간</p></th>
+          <th><p align="center">작성자</p></th>
+          <th><p align="center">별점</p></th>
+          <th><p align="center">추천수</p></th>
+        </tr>
+      </thead>
+
+
+
+
+      <tbody>
+       <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, [post.lecture, post] %> <small>( <%= post.comments.size %> )</small></td>
+          <td><%= post.created_at.strftime(" %Y년 %m월 %d일 %H시") %></td>
+          <td><%=User.find_by_id(Post.find_by_id(post.id).user_id).email if post.user_id %></td>
+          <td>
+            <p><% @lecture.stars.reverse.each do |s| %>
+              <%if s.user.id == post.user_id %>
+                <span class="star-rating supersmall">
+                  <% 1.upto(5) do |i| %>
+                    <% if i == s.score %>
+                      <i class="on"></i>
+                    <% else %>
+                      <i></i>
+                    <% end %>
+                  <% end %>
+                </span>
+                <% end %>
+              <% end %>
+            </p>
+          </td>
+          <td><%= "좋아요 #{post.likes.count}" %>  </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <%= form_tag(lecture_posts_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <font color="#63645A"><%= submit_tag "Search" %></font>
+    <% end %>
+    <br>
+
+
+    <%= link_to '글쓰기', new_lecture_post_path, class: 'btn btn-default' %>
+    <%= will_paginate @posts %>
+
+
+  </div>
+  <div class="col-md-1"></div>
+</div>
