@@ -4,7 +4,12 @@ class Lecture < ActiveRecord::Base
     has_many :stars
     has_many :users
     has_many :posts, dependent: :destroy
-    
+    include SearchCop
+
+    search_scope :search do
+        attributes :name
+        attributes :professor => 'professor.name'
+    end
     
     def avg
         total = 0

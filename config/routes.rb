@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lectures
   resources :post_ps
   resources :post_fs
   devise_for :users
@@ -7,9 +8,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
  
-  resources :lectures do
-    resources :posts 
-  end
   
   resources :lectures do
     resources :stars

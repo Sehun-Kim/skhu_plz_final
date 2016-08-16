@@ -10,6 +10,7 @@
       <th><p align="center">제목</p></th>
       <th><p align="center">작성 시간</p></th>
       <th><p align="center">작성자</p></th>
+      <th><p align="center">별점</p></th>
       <th><p align="center">추천수</p></th>
     </tr>
   </thead>
@@ -23,6 +24,22 @@
       <td><%= link_to post.title, [post.lecture, post] %> <small>( <%= post.comments.size %> )</small></td>
       <td><%= post.created_at.strftime(" %Y년 %m월 %d일 %H시 %M분") %></td>
       <td><%=User.find_by_id(Post.find_by_id(post.id).user_id).email if post.user_id %></td>
+      <td>
+        <p><% @lecture.stars.reverse.each do |s| %>
+          <%if s.user.id == post.user_id %>
+            <span class="star-rating small">
+              <% 1.upto(5) do |i| %>
+                <% if i == s.score %>
+                  <i class="on"></i>
+                <% else %>
+                  <i></i>
+                <% end %>
+              <% end %>
+            </span>
+            <% end %>
+          <% end %>
+        </p>
+      </td>
       <td><%= "좋아요 #{post.likes.count}" %>  </td>
       </tr>
   <% end %>

@@ -6,7 +6,7 @@
   <div class="col-md-4">
     
 
-<% @lec.each do |m| %>
+<% @lectures.each do |m| %>
 <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
  <%=m.professor.name%><br>
   <span class="star-rating supersmall">

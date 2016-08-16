@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'search_cop'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'simple_form', '3.1.0'
 gem "font-awesome-rails"

@@ -12,12 +12,12 @@ class PostsController < ApplicationController
       @posts = @lecture.posts.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
     end
     @use = User.all
-    
+    @star = @lecture.stars.all
   end
 
   def show
-     @hasLike = @post.likes.where(user_id: current_user.id, post_id: @post.id).blank? if current_user
-     @use = User.find_by_id(@post)
+    @hasLike = @post.likes.where(user_id: current_user.id, post_id: @post.id).blank? if current_user
+    @use = User.find_by_id(@post)
     
   end
 
