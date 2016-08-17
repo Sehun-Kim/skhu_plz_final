@@ -2,7 +2,7 @@
 <div id="comments_form_<%=@post.id%>">
 <%= simple_form_for([@post, comment], remote: true ) do | f | %>
     <p style='text-align:right;'>
-      작성자: <%= current_user.email %>
+      작성자: <%= current_user.username %>
     </p>
   <div class='form-inputs'>
     <%= f.input :body, label: false, placeholder: '내용을 작성하세요.',  input_html: { rows: 3 } %>
