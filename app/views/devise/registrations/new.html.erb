@@ -1,6 +1,13 @@
+<style type="text/css">
+.title { color: gray}
+
+</style>
+
+
+
 <br>
 <br>
-<h2>회원가입</h2>
+<h2 class="title">회원가입</h2>
 <br>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -29,14 +36,14 @@
   <div class="col-md-4"></div>
 </div>
 
- 
+
 <br>
 <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4"><%= f.button :submit, "회원가입", class: "btn btn-large btn-block btn-info" %>
 <% end %></div>
   <div class="col-md-4"></div>
-</div> 
-  
+</div>
+
 
 <%= render "devise/shared/links" %>

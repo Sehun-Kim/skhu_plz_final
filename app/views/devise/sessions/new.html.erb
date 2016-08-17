@@ -1,10 +1,16 @@
+<style type="text/css">
+.title { color: gray}
+
+</style>
+
+
 <br>
 <br>
-<h2>로그인</h2>
+<h2 class="title">로그인</h2>
 <br>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  
+
   <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4"><div class="form-group">
@@ -20,8 +26,8 @@
   </div></div>
   <div class="col-md-4"></div>
 </div>
-  
-  <div class="form-group col-md-12">
+
+  <div class="form-group col-md-12 title">
     <%= f.input :remember_me, as: :boolean, inline_label: true, label: false if devise_mapping.rememberable? %>
   </div>
   <div class="row">
@@ -31,7 +37,6 @@
 </div>
   <div class="col-md-4"></div>
 </div>
- 
- 
-<%= render "devise/shared/links" %>
 
+
+<%= render "devise/shared/links" %>

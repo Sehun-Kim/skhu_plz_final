@@ -4,6 +4,31 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
+
+ @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+ @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+ @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+ @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+ @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+ @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+ @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+ @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+ @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+ .hn {font-family: 'Hanna'; color: gray;}
+ .nbs {font-family: 'Nanum Brush Script'; color: gray;}
+ .ng {font-family: 'Nanum Gothic'; color: gray;}
+ .ngc {font-family: 'Nanum Gothic Coding'}
+ .nm {font-family: 'Nanum Myeongjo'; color: gray;}
+ .nps {font-family: 'Nanum Pen Script'; color: gray;}
+ .jjg {font-family: 'Jeju Gothic'; color: gray;}
+ .kp {font-family: 'KoPub Batang'; color: gray;}
+ .nts {font-family: 'Noto Sans KR'; color: gray;}
+
+
+
+
+
 body,
 html {
     width: 100%;
@@ -22,7 +47,7 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .lead {
@@ -37,8 +62,8 @@ h6 {
     color: #f8f8f8;
     background: white no-repeat center center fixed;
     background-size: cover;
-    
-    
+
+
 }
 
 .intro-message {
