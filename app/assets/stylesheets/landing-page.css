@@ -15,15 +15,15 @@
  @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
  @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
  @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
- .hn {font-family: 'Hanna'; color: gray;}
- .nbs {font-family: 'Nanum Brush Script'; color: gray;}
- .ng {font-family: 'Nanum Gothic'; color: gray;}
- .ngc {font-family: 'Nanum Gothic Coding'}
- .nm {font-family: 'Nanum Myeongjo'; color: gray;}
- .nps {font-family: 'Nanum Pen Script'; color: gray;}
- .jjg {font-family: 'Jeju Gothic'; color: gray;}
- .kp {font-family: 'KoPub Batang'; color: gray;}
- .nts {font-family: 'Noto Sans KR'; color: gray;}
+ .hn {font-family: 'Hanna';}
+ .nbs {font-family: 'Nanum Brush Script';}
+ .ng {font-family: 'Nanum Gothic';}
+ .ngc {font-family: 'Nanum Gothic Coding'; color:#333333;}
+ .nm {font-family: 'Nanum Myeongjo';}
+ .nps {font-family: 'Nanum Pen Script';}
+ .jjg {font-family: 'Jeju Gothic';}
+ .kp {font-family: 'KoPub Batang';}
+ .nts {font-family: 'Noto Sans KR';}
 
 
 
