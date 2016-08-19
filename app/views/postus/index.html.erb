@@ -1,0 +1,26 @@
+<h2>Listing postus</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Data actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postus.each do |postu| %>
+      <tr>
+        <td><%= postu.title %></td>
+        <td>
+          <%= link_to 'Show', postu, class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_postu_path(postu), class: 'btn btn-default' %>
+          <%= link_to 'Destroy', postu, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'New postu', new_postu_path, class: 'btn btn-default' %>

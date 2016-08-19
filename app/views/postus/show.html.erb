@@ -1,0 +1,16 @@
+<h2>postu Preview</h2>
+
+<p>
+  <strong>Title:</strong>
+  <%= @postu.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @postu.content %>
+</p>
+
+<hr>
+
+<%= link_to 'Edit', edit_postu_path(@postu), class: 'btn btn-default' %>
+<%= link_to 'Back', postus_path, class: 'btn btn-default' %>

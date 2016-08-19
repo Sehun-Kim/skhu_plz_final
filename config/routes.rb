@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :postus
+  resources :postfs
   devise_for :users
   
   resources :posts do

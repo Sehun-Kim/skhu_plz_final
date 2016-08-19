@@ -1,0 +1,26 @@
+<h2>Listing postfs</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Data actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postfs.each do |postf| %>
+      <tr>
+        <td><%= postf.title %></td>
+        <td>
+          <%= link_to 'Show', postf, class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_postf_path(postf), class: 'btn btn-default' %>
+          <%= link_to 'Destroy', postf, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'New postf', new_postf_path, class: 'btn btn-default' %>

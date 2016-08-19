@@ -1,0 +1,16 @@
+<h2>postf Preview</h2>
+
+<p>
+  <strong>Title:</strong>
+  <%= @postf.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @postf.content %>
+</p>
+
+<hr>
+
+<%= link_to 'Edit', edit_postf_path(@postf), class: 'btn btn-default' %>
+<%= link_to 'Back', postfs_path, class: 'btn btn-default' %>
