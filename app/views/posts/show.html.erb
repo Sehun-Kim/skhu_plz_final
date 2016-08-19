@@ -1,22 +1,6 @@
 <style>
-      @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-      @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
-      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
       @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
-      @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-      @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-      @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-      @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
-      @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-      .hn {font-family: 'Hanna';}
-      .nbs {font-family: 'Nanum Brush Script';}
-      .ng {font-family: 'Nanum Gothic';}
       .ngc {font-family: 'Nanum Gothic Coding'; color:#333333;}
-      .nm {font-family: 'Nanum Myeongjo';}
-      .nps {font-family: 'Nanum Pen Script';}
-      .jjg {font-family: 'Jeju Gothic';}
-      .kp {font-family: 'KoPub Batang';}
-      .nts {font-family: 'Noto Sans KR';}
       .right {text-align:right; margin-top: 5px;}
     </style>
 
@@ -24,17 +8,16 @@
 <br>
 <div class="row">
   <div class="col-md-4"></div>
-  <div class="col-md-4"><h2 class="ngc"><%= @post.title %></h2>
-  <p id="notice"><%= notice %></p></div>
-  <div class="col-md-4"><h2 class="ngc"><p align="center"><%= "좋아요 #{@post.likes.count}" %></p></h2></div>
+  <div class="col-md-4"><h2 class="ngc"><%= @post.title %></h2></div>
+  <div class="col-md-4"><h2 class="ngc"><p align="left"><%= "좋아요 #{@post.likes.count}" %></p></h2></div>
   <%= likeBtn(@hasLike) %>
 </div>
 
 
 
 <div class="row ngc">
-  <div class="col-md-1"></div>
-  <div class="col-md-10">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
 
     <div class='post'>
 
@@ -64,5 +47,5 @@
 
 
     </div>
-  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
 </div>

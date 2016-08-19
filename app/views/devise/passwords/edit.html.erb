@@ -1,4 +1,10 @@
-<h2>비밀번호를 바꾸실 건가요?</h2>
+<style>
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+      .ngc {font-family: 'Nanum Gothic Coding'; color:#333333;}
+    </style>
+
+
+<h2 class="ngc">비밀번호를 바꾸실 건가요?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>

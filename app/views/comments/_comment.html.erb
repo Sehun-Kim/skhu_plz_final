@@ -1,9 +1,17 @@
+<style>
+.br { border-top:1px solid #eaeaea; border-bottom:1px solid #eaeaea; margin-bottom: 10px; margin-top:10px;}
+.margin {margin-top: 3px; margin-bottom: 3px;}
+</style>
+
+
+
 <li id="comment_<%=comment.id %>">
   <strong><%= comment.user.present? ? comment.user.username : "n/a" %></strong>
   [<%= comment.created_at.strftime(" %Y년 %m월 %d일 %H시 %M분") %>]
   <% if comment.user.id == current_user.id %>
     <%= link_to fa_icon("times-circle-o"), [comment.post, comment], method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
   <% end %>
-<br>
+  <div class="margin"></div>
   <%= comment.body %>
+  <div class="br"></div>
 </li>

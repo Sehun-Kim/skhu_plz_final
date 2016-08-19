@@ -1,42 +1,49 @@
-<style type="text/css">
-.title { color: gray}
-
-</style>
+<style>
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+      .ngc {font-family: 'Nanum Gothic Coding'; color:#333333;}
+      .ngc1 {font-family: 'Nanum Gothic Coding'; color:#333333; text-align: left;}
+      .title { color: gray}
+    </style>
 
 
 <br>
 <br>
-<h2 class="title">로그인</h2>
+<h2 class="ngc">로그인</h2>
 <br>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div class="row">
+  <div class="row ngc">
   <div class="col-md-4"></div>
   <div class="col-md-4"><div class="form-group">
-    <%= f.input :email, required: false, autofocus: true, placeholder: "Email", input_html: { class: 'form-control' } %>
+    <%= f.input :email, required: false, autofocus: true, placeholder: "Email", input_html: { class: 'form-control' }, label: false %>
   </div></div>
   <div class="col-md-4"></div>
 </div>
 
-  <div class="row">
+  <div class="row ngc">
   <div class="col-md-4"></div>
   <div class="col-md-4"><div class="form-group">
-    <%= f.input :password, required: false, placeholder: "Password", input_html: { class: 'form-control' } %>
+    <%= f.input :password, required: false, placeholder: "Password", input_html: { class: 'form-control' }, label: false %>
   </div></div>
   <div class="col-md-4"></div>
 </div>
 
-  <div class="form-group col-md-12 title">
-    <%= f.input :remember_me, as: :boolean, inline_label: true, label: false if devise_mapping.rememberable? %>
-  </div>
-  <div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4"> <%= f.button :submit, "Sign in", class: 'btn btn-large btn-block btn-info' %>
+<div class=" col-md-12 ngc1">
+
+</div>
+<div class="row">
+<div class="col-md-4"></div>
+<div class="form-group col-md-4 ngc1"><%= f.input :remember_me, as: :boolean, inline_label: true, label: false if devise_mapping.rememberable? %></div>
+<div class="col-md-4"></div>
+</div>
+
+
+<div class="row ngc">
+<div class="col-md-4"></div>
+<div class="col-md-4"> <%= f.button :submit, "Sign in", class: 'btn btn-large btn-block btn-info' %>
 <% end %>
-</div>
-  <div class="col-md-4"></div>
-</div>
-
-
 <%= render "devise/shared/links" %>
+</div>
+<div class="col-md-4"></div>
+</div>

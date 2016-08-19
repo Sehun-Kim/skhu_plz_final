@@ -1,52 +1,53 @@
-<style type="text/css">
-.title { color: gray}
+<style>
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+      .ngc {font-family: 'Nanum Gothic Coding'; color:#333333;}
+    </style>
 
-</style>
 
 
 
 <br>
 <br>
-<h2 class="title">회원가입</h2>
+<h2 class="ngc">회원가입</h2>
 <br>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-<div class="row">
+<div class="row ngc">
   <div class="col-md-4"></div>
   <div class="col-md-4"><div class="form-group">
-    <%= f.input :email, required: true, autofocus: true, placeholder: "Email을 적어주세요", input_html: { class: 'form-control' } %>
+    <%= f.input :email, required: true, autofocus: true, placeholder: "Email을 적어주세요", input_html: { class: 'form-control' }, label: false %>
   </div></div>
   <div class="col-md-4"></div>
 </div>
 
-<div class="row">
+<div class="row ngc">
   <div class="col-md-4"></div>
   <div class="col-md-4"><div class="form-group">
-    <%= f.input :username, required: true, autofocus: true, placeholder: "사이트에서 사용하실 닉네임을 적어주세요", input_html: { class: 'form-control' } %>
+    <%= f.input :username, required: true, autofocus: true, label: false, placeholder: "사이트에서 사용하실 닉네임을 적어주세요", input_html: { class: 'form-control' } %>
   </div></div>
   <div class="col-md-4"></div>
 </div>
 
-<div class="row">
+<div class="row ngc">
   <div class="col-md-4"></div>
   <div class="col-md-4"> <div class="form-group">
-    <%= f.input :password, required: true, placeholder: "비밀번호를 적어주세요 (6자 이상)", input_html: { class: 'form-control' } %>
+    <%= f.input :password, required: true, placeholder: "비밀번호를 적어주세요 (6자 이상)", input_html: { class: 'form-control' }, label: false %>
   </div></div>
   <div class="col-md-4"></div>
 </div>
 
-<div class="row">
+<div class="row ngc">
   <div class="col-md-4"></div>
   <div class="col-md-4"> <div class="form-group">
-    <%= f.input :password_confirmation, required: true, placeholder: "다시한번 적어주세요", input_html: { class: 'form-control' } %>
+    <%= f.input :password_confirmation, required: true, placeholder: "다시한번 적어주세요", input_html: { class: 'form-control' }, label: false %>
   </div></div>
   <div class="col-md-4"></div>
 </div>
 
 
 <br>
-<div class="row">
+<div class="row ngc">
   <div class="col-md-4"></div>
   <div class="col-md-4"><%= f.button :submit, "회원가입", class: "btn btn-large btn-block btn-info" %>
 <% end %></div>

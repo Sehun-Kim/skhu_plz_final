@@ -1,18 +1,23 @@
+<style>
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+      .ngc {font-family: 'Nanum Gothic Coding'; color:#333333;}
+    </style>
+
 <br>
 <br>
 
-<h2>비밀번호를 잊으셨나요?</h2>
+<h2 class="ngc">비밀번호를 잊으셨나요?</h2>
 <br>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
+
   
-  
-  
+
   <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :email, placeholder: "가입하신 이메일을 적어주세요", required: true, autofocus: true , label: false %>
   </div></div>
   <div class="col-md-4"></div>
 </div>
@@ -30,6 +35,6 @@
 
 
 
- 
+
 
 <%= render "devise/shared/links" %>
