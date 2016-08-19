@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
     has_many :stars
     has_many :lectures
     has_many :comments
+    has_many :postfs
+    has_many :postus
+    has_many :commentfs
+    has_many :commentus
     has_many :likes
     has_many :posts, through: :likes
 end

@@ -1,16 +1,62 @@
-<h2>postu Preview</h2>
+<style>
+      @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+      .hn {font-family: 'Hanna';}
+      .nbs {font-family: 'Nanum Brush Script';}
+      .ng {font-family: 'Nanum Gothic';}
+      .ngc {font-family: 'Nanum Gothic Coding'; color:#333333;}
+      .nm {font-family: 'Nanum Myeongjo';}
+      .nps {font-family: 'Nanum Pen Script';}
+      .jjg {font-family: 'Jeju Gothic';}
+      .kp {font-family: 'KoPub Batang';}
+      .nts {font-family: 'Noto Sans KR';}
+      .right {text-align:right; margin-top: 5px;}
+</style>
 
-<p>
-  <strong>Title:</strong>
-  <%= @postu.title %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @postu.content %>
-</p>
+<br>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"><h2 class="ngc"><%= @postu.title %></h2>
+</div>
 
-<hr>
 
-<%= link_to 'Edit', edit_postu_path(@postu), class: 'btn btn-default' %>
-<%= link_to 'Back', postus_path, class: 'btn btn-default' %>
+
+<div class="row ngc">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+
+    <div class='post'>
+
+
+      <div class="content">
+        <%= simple_format @postu.content %>
+      </div>
+
+      <div class="user">
+        <strong>작성자</strong>
+        <%= User.find(@postu.user_id).username %>
+      </div>
+    </div>
+
+
+  <div class="right">
+    <% if @postu.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_postu_path(@postu), class: 'btn btn-default' %>
+      <%= link_to 'Back', postus_path, class: 'btn btn-default' %>
+    <% end %>
+  </div>
+
+
+    <%= render :partial => "commentus/commentus" %>
+
+    </div>
+  <div class="col-md-1"></div>
+</div>

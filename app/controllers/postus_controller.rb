@@ -1,10 +1,16 @@
 class PostusController < ApplicationController
+  before_action :authenticate_user!, only: [ :new, :edit, :create, :update, :destroy ]
   before_action :set_postu, only: [:show, :edit, :update, :destroy]
 
   # GET /postus
   # GET /postus.json
   def index
     @postus = Postu.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    if params[:search]
+      @postus = @postus.search(params[:search]).paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    else
+      @postus =  Postu.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    end
   end
 
   # GET /postus/1
@@ -19,12 +25,14 @@ class PostusController < ApplicationController
 
   # GET /postus/1/edit
   def edit
+    authorize_action_for @postu
   end
 
   # POST /postus
   # POST /postus.json
   def create
     @postu = Postu.new(postu_params)
+    @postu.user_id = current_user.id
 
     respond_to do |format|
       if @postu.save
@@ -40,6 +48,7 @@ class PostusController < ApplicationController
   # PATCH/PUT /postus/1
   # PATCH/PUT /postus/1.json
   def update
+    authorize_action_for @postu
     respond_to do |format|
       if @postu.update(postu_params)
         format.html { redirect_to @postu, notice: 'Postu was successfully updated.' }
@@ -54,6 +63,7 @@ class PostusController < ApplicationController
   # DELETE /postus/1
   # DELETE /postus/1.json
   def destroy
+    authorize_action_for @postu
     @postu.destroy
     respond_to do |format|
       format.html { redirect_to postus_url, notice: 'Postu was successfully destroyed.' }

@@ -1,26 +1,67 @@
-<h2>Listing postfs</h2>
+<style type="text/css">
+.test1 { color:black; background-color:white; padding:20px; border-radius: 10px;}
+.center {text-align:center; font-size: 35px;}
+.right {text-align:right;}
+.pro {font-size:15px;}
+</style>
 
-<table class="table">
+
+<br>
+
+
+<div class="row ngc">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="test1">
+      <span class="center">자유게시판</span>
+
+
+
+
+      <br>
+
+
+
+
+      <br>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Data actions</th>
+      <th><p align="center">제목</p></th>
+      <th><p align="center">작성 시간</p></th>
+      <th><p align="center">작성자</p></th>
     </tr>
   </thead>
 
   <tbody>
     <% @postfs.each do |postf| %>
       <tr>
-        <td><%= postf.title %></td>
-        <td>
-          <%= link_to 'Show', postf, class: 'btn btn-default' %>
-          <%= link_to 'Edit', edit_postf_path(postf), class: 'btn btn-default' %>
-          <%= link_to 'Destroy', postf, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        <td><%= link_to postf.title, postf %> <small>( <%= postf.commentfs.size %> )</small></td>
+        <td><%= postf.created_at.strftime(" %Y년 %m월 %d일 %H시") %></td>
+        <td><% if postf.user_id == current_user.id %>
+              <strong><%=User.find_by_id(Postf.find_by_id(postf.id).user_id).username if postf.user_id %></strong>
+            <% else %>
+              익명
+            <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+ <%= form_tag(postfs_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <font color="#63645A"><%= submit_tag "Search" %></font>
+    <% end %>
+    <br>
 
-<%= link_to 'New postf', new_postf_path, class: 'btn btn-default' %>
+
+<%= link_to '글쓰기', new_postf_path, class: 'btn btn-default' %>
+<%= will_paginate @postfs %>
+
+ </div>
+  <div class="col-md-1"></div>
+</div>
+
+
+

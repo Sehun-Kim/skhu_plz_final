@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819061429) do
+ActiveRecord::Schema.define(version: 20160819072310) do
+
+  create_table "commentfs", force: :cascade do |t|
+    t.integer  "postf_id"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "commentfs", ["postf_id"], name: "index_commentfs_on_postf_id"
 
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id"
@@ -23,6 +33,16 @@ ActiveRecord::Schema.define(version: 20160819061429) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "commentus", force: :cascade do |t|
+    t.integer  "postu_id"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "commentus", ["postu_id"], name: "index_commentus_on_postu_id"
 
   create_table "lectures", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +72,7 @@ ActiveRecord::Schema.define(version: 20160819061429) do
   create_table "postfs", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160819061429) do
   create_table "postus", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -6,10 +6,14 @@ $navbar-default-link-active-color: $light-orange;
 $navbar-default-link-hover-color: white;
 $navbar-default-link-hover-bg: black;
 
-
+@import 'commentfs';
+@import 'commentus';
 @import 'comments';
 @import "font-awesome";
 @import "posts";
+@import "postfs";
+@import "postus";
+
 @import "bootstrap";
 @import "landing-page";
 @import "stars";

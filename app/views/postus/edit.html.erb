@@ -1,8 +1,18 @@
-<h2>Editing postu</h2>
+<br>
 
-<%= render 'form' %>
 
-<hr>
+<div class="row ngc">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
 
-<%= link_to 'Show', @postu, class: 'btn btn-default' %>
-<%= link_to 'Back', postus_path, class: 'btn btn-default' %>
+    
+
+    <%= render :partial => 'form' %>
+
+    <hr>
+
+    <%= link_to 'Show', @postu, class: 'btn btn-default' %>
+    <%= link_to 'Back', postus_path, class: 'btn btn-default' %>
+  </div>
+  <div class="col-md-1"></div>
+</div>

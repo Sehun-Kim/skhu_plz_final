@@ -4,6 +4,6 @@
   <% if comment.user.id == current_user.id %>
     <%= link_to fa_icon("times-circle-o"), [comment.post, comment], method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
   <% end %>
-  <br>
+<br>
   <%= comment.body %>
-  </li>
+</li>

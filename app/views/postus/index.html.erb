@@ -1,26 +1,62 @@
-<h2>Listing postus</h2>
+<style type="text/css">
+.test1 { color:black; background-color:white; padding:20px; border-radius: 10px;}
+.center {text-align:center; font-size: 35px;}
+.right {text-align:right;}
+.pro {font-size:15px;}
+</style>
 
-<table class="table">
+
+<br>
+
+
+<div class="row ngc">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="test1">
+      <span class="center">건의사항</span>
+
+
+
+
+      <br>
+
+
+
+
+      <br>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Data actions</th>
+      <th><p align="center">제목</p></th>
+      <th><p align="center">작성 시간</p></th>
+      <th><p align="center">작성자</p></th>
     </tr>
   </thead>
 
   <tbody>
     <% @postus.each do |postu| %>
       <tr>
-        <td><%= postu.title %></td>
-        <td>
-          <%= link_to 'Show', postu, class: 'btn btn-default' %>
-          <%= link_to 'Edit', edit_postu_path(postu), class: 'btn btn-default' %>
-          <%= link_to 'Destroy', postu, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
-        </td>
+        <td><%= link_to postu.title, postu %> <small>( <%= postu.commentus.size %> )</small></td>
+        <td><%= postu.created_at.strftime(" %Y년 %m월 %d일 %H시") %></td>
+        <td><%=User.find_by_id(Postu.find_by_id(postu.id).user_id).username if postu.user_id %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+ <%= form_tag(postus_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <font color="#63645A"><%= submit_tag "Search" %></font>
+    <% end %>
+    <br>
 
-<%= link_to 'New postu', new_postu_path, class: 'btn btn-default' %>
+
+<%= link_to '글쓰기', new_postu_path, class: 'btn btn-default' %>
+<%= will_paginate @postus %>
+
+ </div>
+  <div class="col-md-1"></div>
+</div>
+
+
+

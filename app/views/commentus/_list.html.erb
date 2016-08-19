@@ -1,0 +1,7 @@
+<ul id="commentus_list_<%=@postu.id%>">
+<% if @postu.commentus.size > 0 %>
+  <%= render @postu.commentus %>
+<% else %>
+  
+<% end %>
+</ul>

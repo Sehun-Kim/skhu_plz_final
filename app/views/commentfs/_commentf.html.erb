@@ -1,0 +1,9 @@
+<li id="commentf_<%=commentf.id %>">
+  <strong><%= commentf.user.present? ? commentf.user.username : "n/a" %></strong>
+  [<%= commentf.created_at.strftime(" %Y년 %m월 %d일 %H시 %M분") %>]
+  <% if commentf.user.id == current_user.id %>
+    <%= link_to fa_icon("times-circle-o"), [commentf.postf, commentf], method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+  <% end %>
+<br>
+  <%= commentf.body %>
+</li>

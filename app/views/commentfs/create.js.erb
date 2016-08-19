@@ -1,0 +1,6 @@
+<% if @commentf.errors.size == 0 %>
+  $('<%=j render @commentf %>').appendTo($("#commentfs_list_<%=@postf.id %>")).hide().fadeIn('fast');
+  $("#commentfs_form_<%=@postf.id %> form")[0].reset();
+<% else %>
+  alert("내용 작성하고...");
+<% end %>

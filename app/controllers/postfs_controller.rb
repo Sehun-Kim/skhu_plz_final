@@ -1,10 +1,16 @@
 class PostfsController < ApplicationController
+  before_action :authenticate_user!, only: [ :new, :edit, :create, :update, :destroy ]
   before_action :set_postf, only: [:show, :edit, :update, :destroy]
 
   # GET /postfs
   # GET /postfs.json
   def index
     @postfs = Postf.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    if params[:search]
+      @postfs = @postfs.search(params[:search]).paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    else
+      @postfs =  Postf.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
+    end
   end
 
   # GET /postfs/1
@@ -19,12 +25,14 @@ class PostfsController < ApplicationController
 
   # GET /postfs/1/edit
   def edit
+    authorize_action_for @postf
   end
 
   # POST /postfs
   # POST /postfs.json
   def create
     @postf = Postf.new(postf_params)
+    @postf.user_id = current_user.id
 
     respond_to do |format|
       if @postf.save
@@ -40,6 +48,7 @@ class PostfsController < ApplicationController
   # PATCH/PUT /postfs/1
   # PATCH/PUT /postfs/1.json
   def update
+    authorize_action_for @postf
     respond_to do |format|
       if @postf.update(postf_params)
         format.html { redirect_to @postf, notice: 'Postf was successfully updated.' }
@@ -54,6 +63,7 @@ class PostfsController < ApplicationController
   # DELETE /postfs/1
   # DELETE /postfs/1.json
   def destroy
+    authorize_action_for @postf
     @postf.destroy
     respond_to do |format|
       format.html { redirect_to postfs_url, notice: 'Postf was successfully destroyed.' }
