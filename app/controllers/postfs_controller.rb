@@ -36,7 +36,7 @@ class PostfsController < ApplicationController
 
     respond_to do |format|
       if @postf.save
-        format.html { redirect_to @postf, notice: 'Postf was successfully created.' }
+        format.html { redirect_to @postf, notice: '게시글이 작성되었습니다.' }
         format.json { render :show, status: :created, location: @postf }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class PostfsController < ApplicationController
     authorize_action_for @postf
     respond_to do |format|
       if @postf.update(postf_params)
-        format.html { redirect_to @postf, notice: 'Postf was successfully updated.' }
+        format.html { redirect_to @postf, notice: '게시글이 수정되었습니다.' }
         format.json { render :show, status: :ok, location: @postf }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class PostfsController < ApplicationController
     authorize_action_for @postf
     @postf.destroy
     respond_to do |format|
-      format.html { redirect_to postfs_url, notice: 'Postf was successfully destroyed.' }
+      format.html { redirect_to postfs_url, notice: '게시글이 삭제되었습니다.' }
       format.json { head :no_content }
     end
   end

@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160819072310) do
 
   create_table "majors", force: :cascade do |t|
     t.string   "name"
+    t.integer  "line"
     t.integer  "liberal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

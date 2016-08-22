@@ -1,6 +1,6 @@
 <%= form_tag lectures_path, :method => :get do %>
 
-        <%= text_field_tag :search, params[:search], placeholder: "search" %>
+        <%= text_field_tag :search, params[:search], placeholder: "교수명/강의명 검색" %>
 
         <%= button_tag fa_icon('search'), class: "button secondary postfix" %>
 

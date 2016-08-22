@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :edit, :create, :update, :destroy ]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :like, :dislike]
   before_action :set_lecture, exception: [:like, :dislike]
-  
+
 
   def index
     @posts = @lecture.posts.paginate(:page => params[:page], :per_page => 7).order('created_at DESC')
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def show
     @hasLike = @post.likes.where(user_id: current_user.id, post_id: @post.id).blank? if current_user
     @use = User.find_by_id(@post)
-    
+
   end
 
   def new
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def edit
     authorize_action_for @post
   end
- 
+
   def like
    if Like.create(user_id: current_user.id,post_id: @post.id)
     redirect_to :back
@@ -64,7 +64,7 @@ class PostsController < ApplicationController
     authorize_action_for @post
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to [@post.lecture, @post], notice: '게시물이 수정되었습니다.' }
+        format.html { redirect_to [@post.lecture, @post], notice: '게시글이 수정되었습니다.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -77,7 +77,7 @@ class PostsController < ApplicationController
     authorize_action_for @post
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to lecture_posts_url, notice: '게시물이 삭제되었습니다.' }
+      format.html { redirect_to lecture_posts_url, notice: '게시글이 삭제되었습니다.' }
       format.json { head :no_content }
     end
   end

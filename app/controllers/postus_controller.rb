@@ -36,7 +36,7 @@ class PostusController < ApplicationController
 
     respond_to do |format|
       if @postu.save
-        format.html { redirect_to @postu, notice: 'Postu was successfully created.' }
+        format.html { redirect_to @postu, notice: '게시글이 작성되었습니다.' }
         format.json { render :show, status: :created, location: @postu }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class PostusController < ApplicationController
     authorize_action_for @postu
     respond_to do |format|
       if @postu.update(postu_params)
-        format.html { redirect_to @postu, notice: 'Postu was successfully updated.' }
+        format.html { redirect_to @postu, notice: '게시글이 수정되었습니다.' }
         format.json { render :show, status: :ok, location: @postu }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class PostusController < ApplicationController
     authorize_action_for @postu
     @postu.destroy
     respond_to do |format|
-      format.html { redirect_to postus_url, notice: 'Postu was successfully destroyed.' }
+      format.html { redirect_to postus_url, notice: '게시글이 삭제되었습니다.' }
       format.json { head :no_content }
     end
   end
