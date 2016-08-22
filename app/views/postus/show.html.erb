@@ -34,8 +34,9 @@
   <div class="right">
     <% if @postu.user_id == current_user.id %>
       <%= link_to 'Edit', edit_postu_path(@postu), class: 'btn btn-default' %>
-      <%= link_to 'Back', postus_path, class: 'btn btn-default' %>
+      <%= link_to 'Destroy', [@postu], method: :delete, data: { confirm: '진짜요?' }, class:'btn btn-default' %>
     <% end %>
+    <%= link_to 'Back', postfu_path, class: 'btn btn-default' %>
   </div>
 
 
