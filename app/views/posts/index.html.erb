@@ -1,19 +1,20 @@
 <style type="text/css">
-.test1 { color:black; background-color:white; padding:20px; border-radius: 10px;}
-.center {text-align:center; font-size: 35px;}
-.right {text-align:right;}
-.pro {font-size:15px;}
+  .test1 { color:black; background-color:white; padding:20px; border-radius: 10px;}
+  .center {text-align:center; font-size: 35px;}
+  .right {text-align:right;}
+  .titleline {border-left:0.5em solid #E0CB52; padding-left: 0.5em; font-size: 20px; text-align:left;}
 </style>
 
 
 <br>
 
 
-<div class="row ngc">
+<div class="row ngc wrap content">
   <div class="col-md-1"></div>
   <div class="col-md-10">
     <div class="test1">
-      <span class="center"><%= @lecture.name %></span>   <a href="/home/show_professor/<%=@lecture.professor_id%>"><span class="pro"><%= @lecture.professor.name %></a>교수님</span><span class="right"><%= render :partial => "stars/star" %></span>
+      <h3 class="ngc margin titleline"><%= @lecture.name %>  <span class="right"><a href="/home/show_professor/<%=@lecture.professor_id%>"><%= @lecture.professor.name %></a>교수님</span></h3>
+      <span class="right"><%= render :partial => "stars/star" %></span>
 
 
 
@@ -81,4 +82,5 @@
 
   </div>
   <div class="col-md-1"></div>
+</div>
 </div>
