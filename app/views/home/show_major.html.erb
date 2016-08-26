@@ -1,27 +1,1336 @@
+<style>
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+      .ngc {font-family: 'Nanum Gothic Coding'; color:#333333;}
+      .right {text-align:right; margin-top: 5px;}
+      .margin {margin-bottom: 20px;}
+      .titleline {border-left:0.5em solid #E0CB52; padding-left: 0.5em; font-size: 20px; text-align:left;}
+    </style>
+
+
 <br>
-<br>
 
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
-    
+<div class="row ngc">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
 
-<% @lec.each do |m| %>
-<a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
- <%=m.professor.name%><br>
-  <span class="star-rating supersmall">
-          <% 1.upto(5) do |i| %>
-            <% if i == m.avg.round(0) %>
-              <i class="on"></i>
-            <% else %>
-              <i></i>
-            <% end %>
-          <% end %>
-        </span>
-  <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
-</button></a><br>
-<%end%>
+<h3 class="ngc margin titleline"><%= @maj.name %></h3>
 
-  </div>
-  <div class="col-md-4"></div>
+    <table>
+      <tr style="vertical-align:top">
+        <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify;">
+          <% @lec.each do |m| %>
+          <%if m.kyungline_id == 1%>
+          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+           <%=m.professor.name%><br>
+            <span class="star-rating supersmall">
+                    <% 1.upto(5) do |i| %>
+                      <% if i == m.avg.round(0) %>
+                        <i class="on"></i>
+                      <% else %>
+                        <i></i>
+                      <% end %>
+                    <% end %>
+                  </span>
+            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+          </button></a><br>
+          <%end%><%end%>
+        </td>
+        <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify;">
+          <% @lec.each do |m| %>
+          <%if m.kyungline_id == 2%>
+          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+           <%=m.professor.name%><br>
+            <span class="star-rating supersmall">
+                    <% 1.upto(5) do |i| %>
+                      <% if i == m.avg.round(0) %>
+                        <i class="on"></i>
+                      <% else %>
+                        <i></i>
+                      <% end %>
+                    <% end %>
+                  </span>
+            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+          </button></a><br>
+          <%end%><%end%>
+        </td>
+        <td style="padding-left:10px; width:250px;">
+          <% @lec.each do |m| %>
+          <%if m.kyungline_id == 3%>
+          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+           <%=m.professor.name%><br>
+            <span class="star-rating supersmall">
+                    <% 1.upto(5) do |i| %>
+                      <% if i == m.avg.round(0) %>
+                        <i class="on"></i>
+                      <% else %>
+                        <i></i>
+                      <% end %>
+                    <% end %>
+                  </span>
+            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+          </button></a><br>
+          <%end%><%end%>
+        </td>
+      </tr>
+    </table>
+
+        <table>
+          <tr style="vertical-align:top">
+            <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+              <% @lec.each do |m| %>
+              <%if m.glline_id == 1%>
+              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+               <%=m.professor.name%><br>
+                <span class="star-rating supersmall">
+                        <% 1.upto(5) do |i| %>
+                          <% if i == m.avg.round(0) %>
+                            <i class="on"></i>
+                          <% else %>
+                            <i></i>
+                          <% end %>
+                        <% end %>
+                      </span>
+                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+              </button></a><br>
+              <%end%><%end%>
+            </td>
+            <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+              <% @lec.each do |m| %>
+              <%if m.glline_id == 2%>
+              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+               <%=m.professor.name%><br>
+                <span class="star-rating supersmall">
+                        <% 1.upto(5) do |i| %>
+                          <% if i == m.avg.round(0) %>
+                            <i class="on"></i>
+                          <% else %>
+                            <i></i>
+                          <% end %>
+                        <% end %>
+                      </span>
+                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+              </button></a><br>
+              <%end%><%end%>
+            </td>
+            <td style="padding-left:10px; width:250px; ">
+              <% @lec.each do |m| %>
+              <%if m.glline_id == 3%>
+              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+               <%=m.professor.name%><br>
+                <span class="star-rating supersmall">
+                        <% 1.upto(5) do |i| %>
+                          <% if i == m.avg.round(0) %>
+                            <i class="on"></i>
+                          <% else %>
+                            <i></i>
+                          <% end %>
+                        <% end %>
+                      </span>
+                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+              </button></a><br>
+              <%end%><%end%>
+            </td>
+          </tr>
+        </table>
+
+
+            <table>
+              <tr style="vertical-align:top">
+                <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                  <% @lec.each do |m| %>
+                  <%if m.dline_id == 1%>
+                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                   <%=m.professor.name%><br>
+                    <span class="star-rating supersmall">
+                            <% 1.upto(5) do |i| %>
+                              <% if i == m.avg.round(0) %>
+                                <i class="on"></i>
+                              <% else %>
+                                <i></i>
+                              <% end %>
+                            <% end %>
+                          </span>
+                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                  </button></a><br>
+                  <%end%><%end%>
+                </td>
+                <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                  <% @lec.each do |m| %>
+                  <%if m.dline_id == 2%>
+                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                   <%=m.professor.name%><br>
+                    <span class="star-rating supersmall">
+                            <% 1.upto(5) do |i| %>
+                              <% if i == m.avg.round(0) %>
+                                <i class="on"></i>
+                              <% else %>
+                                <i></i>
+                              <% end %>
+                            <% end %>
+                          </span>
+                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                  </button></a><br>
+                  <%end%><%end%>
+                </td>
+                <td style="padding-left:10px; width:250px; ">
+                  <% @lec.each do |m| %>
+                  <%if m.dline_id == 3%>
+                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                   <%=m.professor.name%><br>
+                    <span class="star-rating supersmall">
+                            <% 1.upto(5) do |i| %>
+                              <% if i == m.avg.round(0) %>
+                                <i class="on"></i>
+                              <% else %>
+                                <i></i>
+                              <% end %>
+                            <% end %>
+                          </span>
+                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                  </button></a><br>
+                  <%end%><%end%>
+                </td>
+              </tr>
+            </table>
+
+                <table>
+                  <tr style="vertical-align:top">
+                    <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                      <% @lec.each do |m| %>
+                      <%if m.saline_id == 1%>
+                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                       <%=m.professor.name%><br>
+                        <span class="star-rating supersmall">
+                                <% 1.upto(5) do |i| %>
+                                  <% if i == m.avg.round(0) %>
+                                    <i class="on"></i>
+                                  <% else %>
+                                    <i></i>
+                                  <% end %>
+                                <% end %>
+                              </span>
+                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                      </button></a><br>
+                      <%end%><%end%>
+                    </td>
+                    <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                      <% @lec.each do |m| %>
+                      <%if m.saline_id == 2%>
+                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                       <%=m.professor.name%><br>
+                        <span class="star-rating supersmall">
+                                <% 1.upto(5) do |i| %>
+                                  <% if i == m.avg.round(0) %>
+                                    <i class="on"></i>
+                                  <% else %>
+                                    <i></i>
+                                  <% end %>
+                                <% end %>
+                              </span>
+                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                      </button></a><br>
+                      <%end%><%end%>
+                    </td>
+                    <td style="padding-left:10px; width:250px; ">
+                      <% @lec.each do |m| %>
+                      <%if m.saline_id == 3%>
+                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                       <%=m.professor.name%><br>
+                        <span class="star-rating supersmall">
+                                <% 1.upto(5) do |i| %>
+                                  <% if i == m.avg.round(0) %>
+                                    <i class="on"></i>
+                                  <% else %>
+                                    <i></i>
+                                  <% end %>
+                                <% end %>
+                              </span>
+                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                      </button></a><br>
+                      <%end%><%end%>
+                    </td>
+                  </tr>
+                </table>
+
+
+                    <table>
+                      <tr style="vertical-align:top">
+                        <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                          <% @lec.each do |m| %>
+                          <%if m.sasaline_id == 1%>
+                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                           <%=m.professor.name%><br>
+                            <span class="star-rating supersmall">
+                                    <% 1.upto(5) do |i| %>
+                                      <% if i == m.avg.round(0) %>
+                                        <i class="on"></i>
+                                      <% else %>
+                                        <i></i>
+                                      <% end %>
+                                    <% end %>
+                                  </span>
+                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                          </button></a><br>
+                          <%end%><%end%>
+                        </td>
+                        <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                          <% @lec.each do |m| %>
+                          <%if m.sasaline_id == 2%>
+                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                           <%=m.professor.name%><br>
+                            <span class="star-rating supersmall">
+                                    <% 1.upto(5) do |i| %>
+                                      <% if i == m.avg.round(0) %>
+                                        <i class="on"></i>
+                                      <% else %>
+                                        <i></i>
+                                      <% end %>
+                                    <% end %>
+                                  </span>
+                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                          </button></a><br>
+                          <%end%><%end%>
+                        </td>
+                        <td style="padding-left:10px; width:250px; ">
+                          <% @lec.each do |m| %>
+                          <%if m.sasaline_id == 3%>
+                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                           <%=m.professor.name%><br>
+                            <span class="star-rating supersmall">
+                                    <% 1.upto(5) do |i| %>
+                                      <% if i == m.avg.round(0) %>
+                                        <i class="on"></i>
+                                      <% else %>
+                                        <i></i>
+                                      <% end %>
+                                    <% end %>
+                                  </span>
+                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                          </button></a><br>
+                          <%end%><%end%>
+                        </td>
+                      </tr>
+                    </table>
+
+
+                        <table>
+                          <tr style="vertical-align:top">
+                            <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                              <% @lec.each do |m| %>
+                              <%if m.sakyungline_id == 1%>
+                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                               <%=m.professor.name%><br>
+                                <span class="star-rating supersmall">
+                                        <% 1.upto(5) do |i| %>
+                                          <% if i == m.avg.round(0) %>
+                                            <i class="on"></i>
+                                          <% else %>
+                                            <i></i>
+                                          <% end %>
+                                        <% end %>
+                                      </span>
+                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                              </button></a><br>
+                              <%end%><%end%>
+                            </td>
+                            <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                              <% @lec.each do |m| %>
+                              <%if m.sakyungline_id == 2%>
+                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                               <%=m.professor.name%><br>
+                                <span class="star-rating supersmall">
+                                        <% 1.upto(5) do |i| %>
+                                          <% if i == m.avg.round(0) %>
+                                            <i class="on"></i>
+                                          <% else %>
+                                            <i></i>
+                                          <% end %>
+                                        <% end %>
+                                      </span>
+                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                              </button></a><br>
+                              <%end%><%end%>
+                            </td>
+                            <td style="padding-left:10px; width:250px; ">
+                              <% @lec.each do |m| %>
+                              <%if m.sakyungline_id == 3%>
+                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                               <%=m.professor.name%><br>
+                                <span class="star-rating supersmall">
+                                        <% 1.upto(5) do |i| %>
+                                          <% if i == m.avg.round(0) %>
+                                            <i class="on"></i>
+                                          <% else %>
+                                            <i></i>
+                                          <% end %>
+                                        <% end %>
+                                      </span>
+                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                              </button></a><br>
+                              <%end%><%end%>
+                            </td>
+                          </tr>
+                        </table>
+
+
+                            <table>
+                              <tr style="vertical-align:top">
+                                <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                  <% @lec.each do |m| %>
+                                  <%if m.sajungline_id == 1%>
+                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                   <%=m.professor.name%><br>
+                                    <span class="star-rating supersmall">
+                                            <% 1.upto(5) do |i| %>
+                                              <% if i == m.avg.round(0) %>
+                                                <i class="on"></i>
+                                              <% else %>
+                                                <i></i>
+                                              <% end %>
+                                            <% end %>
+                                          </span>
+                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                  </button></a><br>
+                                  <%end%><%end%>
+                                </td>
+                                <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                  <% @lec.each do |m| %>
+                                  <%if m.sajungline_id == 2%>
+                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                   <%=m.professor.name%><br>
+                                    <span class="star-rating supersmall">
+                                            <% 1.upto(5) do |i| %>
+                                              <% if i == m.avg.round(0) %>
+                                                <i class="on"></i>
+                                              <% else %>
+                                                <i></i>
+                                              <% end %>
+                                            <% end %>
+                                          </span>
+                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                  </button></a><br>
+                                  <%end%><%end%>
+                                </td>
+                                <td style="padding-left:10px; width:250px; ">
+                                  <% @lec.each do |m| %>
+                                  <%if m.sajungline_id == 3%>
+                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                   <%=m.professor.name%><br>
+                                    <span class="star-rating supersmall">
+                                            <% 1.upto(5) do |i| %>
+                                              <% if i == m.avg.round(0) %>
+                                                <i class="on"></i>
+                                              <% else %>
+                                                <i></i>
+                                              <% end %>
+                                            <% end %>
+                                          </span>
+                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                  </button></a><br>
+                                  <%end%><%end%>
+                                </td>
+                              </tr>
+                            </table>
+
+
+                                <table>
+                                  <tr style="vertical-align:top">
+                                    <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                      <% @lec.each do |m| %>
+                                      <%if m.sbline_id == 1%>
+                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                       <%=m.professor.name%><br>
+                                        <span class="star-rating supersmall">
+                                                <% 1.upto(5) do |i| %>
+                                                  <% if i == m.avg.round(0) %>
+                                                    <i class="on"></i>
+                                                  <% else %>
+                                                    <i></i>
+                                                  <% end %>
+                                                <% end %>
+                                              </span>
+                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                      </button></a><br>
+                                      <%end%><%end%>
+                                    </td>
+                                    <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                      <% @lec.each do |m| %>
+                                      <%if m.sbline_id == 2%>
+                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                       <%=m.professor.name%><br>
+                                        <span class="star-rating supersmall">
+                                                <% 1.upto(5) do |i| %>
+                                                  <% if i == m.avg.round(0) %>
+                                                    <i class="on"></i>
+                                                  <% else %>
+                                                    <i></i>
+                                                  <% end %>
+                                                <% end %>
+                                              </span>
+                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                      </button></a><br>
+                                      <%end%><%end%>
+                                    </td>
+                                    <td style="padding-left:10px; width:250px; ">
+                                      <% @lec.each do |m| %>
+                                      <%if m.sbline_id == 3%>
+                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                       <%=m.professor.name%><br>
+                                        <span class="star-rating supersmall">
+                                                <% 1.upto(5) do |i| %>
+                                                  <% if i == m.avg.round(0) %>
+                                                    <i class="on"></i>
+                                                  <% else %>
+                                                    <i></i>
+                                                  <% end %>
+                                                <% end %>
+                                              </span>
+                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                      </button></a><br>
+                                      <%end%><%end%>
+                                    </td>
+                                  </tr>
+                                </table>
+
+
+                                    <table>
+                                      <tr style="vertical-align:top">
+                                        <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                          <% @lec.each do |m| %>
+                                          <%if m.soline_id == 1%>
+                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                           <%=m.professor.name%><br>
+                                            <span class="star-rating supersmall">
+                                                    <% 1.upto(5) do |i| %>
+                                                      <% if i == m.avg.round(0) %>
+                                                        <i class="on"></i>
+                                                      <% else %>
+                                                        <i></i>
+                                                      <% end %>
+                                                    <% end %>
+                                                  </span>
+                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                          </button></a><br>
+                                          <%end%><%end%>
+                                        </td>
+                                        <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                          <% @lec.each do |m| %>
+                                          <%if m.soline_id == 2%>
+                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                           <%=m.professor.name%><br>
+                                            <span class="star-rating supersmall">
+                                                    <% 1.upto(5) do |i| %>
+                                                      <% if i == m.avg.round(0) %>
+                                                        <i class="on"></i>
+                                                      <% else %>
+                                                        <i></i>
+                                                      <% end %>
+                                                    <% end %>
+                                                  </span>
+                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                          </button></a><br>
+                                          <%end%><%end%>
+                                        </td>
+                                        <td style="padding-left:10px; width:250px; ">
+                                          <% @lec.each do |m| %>
+                                          <%if m.soline_id == 3%>
+                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                           <%=m.professor.name%><br>
+                                            <span class="star-rating supersmall">
+                                                    <% 1.upto(5) do |i| %>
+                                                      <% if i == m.avg.round(0) %>
+                                                        <i class="on"></i>
+                                                      <% else %>
+                                                        <i></i>
+                                                      <% end %>
+                                                    <% end %>
+                                                  </span>
+                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                          </button></a><br>
+                                          <%end%><%end%>
+                                        </td>
+                                      </tr>
+                                    </table>
+
+
+                                        <table>
+                                          <tr style="vertical-align:top">
+                                            <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                              <% @lec.each do |m| %>
+                                              <%if m.sinline_id == 1%>
+                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                               <%=m.professor.name%><br>
+                                                <span class="star-rating supersmall">
+                                                        <% 1.upto(5) do |i| %>
+                                                          <% if i == m.avg.round(0) %>
+                                                            <i class="on"></i>
+                                                          <% else %>
+                                                            <i></i>
+                                                          <% end %>
+                                                        <% end %>
+                                                      </span>
+                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                              </button></a><br>
+                                              <%end%><%end%>
+                                            </td>
+                                            <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                              <% @lec.each do |m| %>
+                                              <%if m.sinline_id == 2%>
+                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                               <%=m.professor.name%><br>
+                                                <span class="star-rating supersmall">
+                                                        <% 1.upto(5) do |i| %>
+                                                          <% if i == m.avg.round(0) %>
+                                                            <i class="on"></i>
+                                                          <% else %>
+                                                            <i></i>
+                                                          <% end %>
+                                                        <% end %>
+                                                      </span>
+                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                              </button></a><br>
+                                              <%end%><%end%>
+                                            </td>
+                                            <td style="padding-left:10px; width:250px; ">
+                                              <% @lec.each do |m| %>
+                                              <%if m.sinline_id == 3%>
+                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                               <%=m.professor.name%><br>
+                                                <span class="star-rating supersmall">
+                                                        <% 1.upto(5) do |i| %>
+                                                          <% if i == m.avg.round(0) %>
+                                                            <i class="on"></i>
+                                                          <% else %>
+                                                            <i></i>
+                                                          <% end %>
+                                                        <% end %>
+                                                      </span>
+                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                              </button></a><br>
+                                              <%end%><%end%>
+                                            </td>
+                                          </tr>
+                                        </table>
+
+
+                                            <table>
+                                              <tr style="vertical-align:top">
+                                                <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                  <% @lec.each do |m| %>
+                                                  <%if m.shline_id == 1%>
+                                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                   <%=m.professor.name%><br>
+                                                    <span class="star-rating supersmall">
+                                                            <% 1.upto(5) do |i| %>
+                                                              <% if i == m.avg.round(0) %>
+                                                                <i class="on"></i>
+                                                              <% else %>
+                                                                <i></i>
+                                                              <% end %>
+                                                            <% end %>
+                                                          </span>
+                                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                  </button></a><br>
+                                                  <%end%><%end%>
+                                                </td>
+                                                <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                  <% @lec.each do |m| %>
+                                                  <%if m.shline_id == 2%>
+                                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                   <%=m.professor.name%><br>
+                                                    <span class="star-rating supersmall">
+                                                            <% 1.upto(5) do |i| %>
+                                                              <% if i == m.avg.round(0) %>
+                                                                <i class="on"></i>
+                                                              <% else %>
+                                                                <i></i>
+                                                              <% end %>
+                                                            <% end %>
+                                                          </span>
+                                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                  </button></a><br>
+                                                  <%end%><%end%>
+                                                </td>
+                                                <td style="padding-left:10px; width:250px; ">
+                                                  <% @lec.each do |m| %>
+                                                  <%if m.shline_id == 3%>
+                                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                   <%=m.professor.name%><br>
+                                                    <span class="star-rating supersmall">
+                                                            <% 1.upto(5) do |i| %>
+                                                              <% if i == m.avg.round(0) %>
+                                                                <i class="on"></i>
+                                                              <% else %>
+                                                                <i></i>
+                                                              <% end %>
+                                                            <% end %>
+                                                          </span>
+                                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                  </button></a><br>
+                                                  <%end%><%end%>
+                                                </td>
+                                              </tr>
+                                            </table>
+
+
+                                                <table>
+                                                  <tr style="vertical-align:top">
+                                                    <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                      <% @lec.each do |m| %>
+                                                      <%if m.yline_id == 1%>
+                                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                       <%=m.professor.name%><br>
+                                                        <span class="star-rating supersmall">
+                                                                <% 1.upto(5) do |i| %>
+                                                                  <% if i == m.avg.round(0) %>
+                                                                    <i class="on"></i>
+                                                                  <% else %>
+                                                                    <i></i>
+                                                                  <% end %>
+                                                                <% end %>
+                                                              </span>
+                                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                      </button></a><br>
+                                                      <%end%><%end%>
+                                                    </td>
+                                                    <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                      <% @lec.each do |m| %>
+                                                      <%if m.yline_id == 2%>
+                                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                       <%=m.professor.name%><br>
+                                                        <span class="star-rating supersmall">
+                                                                <% 1.upto(5) do |i| %>
+                                                                  <% if i == m.avg.round(0) %>
+                                                                    <i class="on"></i>
+                                                                  <% else %>
+                                                                    <i></i>
+                                                                  <% end %>
+                                                                <% end %>
+                                                              </span>
+                                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                      </button></a><br>
+                                                      <%end%><%end%>
+                                                    </td>
+                                                    <td style="padding-left:10px; width:250px; ">
+                                                      <% @lec.each do |m| %>
+                                                      <%if m.yline_id == 3%>
+                                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                       <%=m.professor.name%><br>
+                                                        <span class="star-rating supersmall">
+                                                                <% 1.upto(5) do |i| %>
+                                                                  <% if i == m.avg.round(0) %>
+                                                                    <i class="on"></i>
+                                                                  <% else %>
+                                                                    <i></i>
+                                                                  <% end %>
+                                                                <% end %>
+                                                              </span>
+                                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                      </button></a><br>
+                                                      <%end%><%end%>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+
+
+                                                    <table>
+                                                      <tr style="vertical-align:top">
+                                                        <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                          <% @lec.each do |m| %>
+                                                          <%if m.illine_id == 1%>
+                                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                           <%=m.professor.name%><br>
+                                                            <span class="star-rating supersmall">
+                                                                    <% 1.upto(5) do |i| %>
+                                                                      <% if i == m.avg.round(0) %>
+                                                                        <i class="on"></i>
+                                                                      <% else %>
+                                                                        <i></i>
+                                                                      <% end %>
+                                                                    <% end %>
+                                                                  </span>
+                                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                          </button></a><br>
+                                                          <%end%><%end%>
+                                                        </td>
+                                                        <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                          <% @lec.each do |m| %>
+                                                          <%if m.illine_id == 2%>
+                                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                           <%=m.professor.name%><br>
+                                                            <span class="star-rating supersmall">
+                                                                    <% 1.upto(5) do |i| %>
+                                                                      <% if i == m.avg.round(0) %>
+                                                                        <i class="on"></i>
+                                                                      <% else %>
+                                                                        <i></i>
+                                                                      <% end %>
+                                                                    <% end %>
+                                                                  </span>
+                                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                          </button></a><br>
+                                                          <%end%><%end%>
+                                                        </td>
+                                                        <td style="padding-left:10px; width:250px; ">
+                                                          <% @lec.each do |m| %>
+                                                          <%if m.illine_id == 3%>
+                                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                           <%=m.professor.name%><br>
+                                                            <span class="star-rating supersmall">
+                                                                    <% 1.upto(5) do |i| %>
+                                                                      <% if i == m.avg.round(0) %>
+                                                                        <i class="on"></i>
+                                                                      <% else %>
+                                                                        <i></i>
+                                                                      <% end %>
+                                                                    <% end %>
+                                                                  </span>
+                                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                          </button></a><br>
+                                                          <%end%><%end%>
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+
+
+                                                        <table>
+                                                          <tr style="vertical-align:top">
+                                                            <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                              <% @lec.each do |m| %>
+                                                              <%if m.jungline_id == 1%>
+                                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                               <%=m.professor.name%><br>
+                                                                <span class="star-rating supersmall">
+                                                                        <% 1.upto(5) do |i| %>
+                                                                          <% if i == m.avg.round(0) %>
+                                                                            <i class="on"></i>
+                                                                          <% else %>
+                                                                            <i></i>
+                                                                          <% end %>
+                                                                        <% end %>
+                                                                      </span>
+                                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                              </button></a><br>
+                                                              <%end%><%end%>
+                                                            </td>
+                                                            <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                              <% @lec.each do |m| %>
+                                                              <%if m.jungline_id == 2%>
+                                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                               <%=m.professor.name%><br>
+                                                                <span class="star-rating supersmall">
+                                                                        <% 1.upto(5) do |i| %>
+                                                                          <% if i == m.avg.round(0) %>
+                                                                            <i class="on"></i>
+                                                                          <% else %>
+                                                                            <i></i>
+                                                                          <% end %>
+                                                                        <% end %>
+                                                                      </span>
+                                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                              </button></a><br>
+                                                              <%end%><%end%>
+                                                            </td>
+                                                            <td style="padding-left:10px; width:250px; ">
+                                                              <% @lec.each do |m| %>
+                                                              <%if m.jungline_id == 3%>
+                                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                               <%=m.professor.name%><br>
+                                                                <span class="star-rating supersmall">
+                                                                        <% 1.upto(5) do |i| %>
+                                                                          <% if i == m.avg.round(0) %>
+                                                                            <i class="on"></i>
+                                                                          <% else %>
+                                                                            <i></i>
+                                                                          <% end %>
+                                                                        <% end %>
+                                                                      </span>
+                                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                              </button></a><br>
+                                                              <%end%><%end%>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+
+
+                                                            <table>
+                                                              <tr style="vertical-align:top">
+                                                                <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                  <% @lec.each do |m| %>
+                                                                  <%if m.joongline_id == 1%>
+                                                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                   <%=m.professor.name%><br>
+                                                                    <span class="star-rating supersmall">
+                                                                            <% 1.upto(5) do |i| %>
+                                                                              <% if i == m.avg.round(0) %>
+                                                                                <i class="on"></i>
+                                                                              <% else %>
+                                                                                <i></i>
+                                                                              <% end %>
+                                                                            <% end %>
+                                                                          </span>
+                                                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                  </button></a><br>
+                                                                  <%end%><%end%>
+                                                                </td>
+                                                                <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                  <% @lec.each do |m| %>
+                                                                  <%if m.joongline_id == 2%>
+                                                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                   <%=m.professor.name%><br>
+                                                                    <span class="star-rating supersmall">
+                                                                            <% 1.upto(5) do |i| %>
+                                                                              <% if i == m.avg.round(0) %>
+                                                                                <i class="on"></i>
+                                                                              <% else %>
+                                                                                <i></i>
+                                                                              <% end %>
+                                                                            <% end %>
+                                                                          </span>
+                                                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                  </button></a><br>
+                                                                  <%end%><%end%>
+                                                                </td>
+                                                                <td style="padding-left:10px; width:250px; ">
+                                                                  <% @lec.each do |m| %>
+                                                                  <%if m.joongline_id == 3%>
+                                                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                   <%=m.professor.name%><br>
+                                                                    <span class="star-rating supersmall">
+                                                                            <% 1.upto(5) do |i| %>
+                                                                              <% if i == m.avg.round(0) %>
+                                                                                <i class="on"></i>
+                                                                              <% else %>
+                                                                                <i></i>
+                                                                              <% end %>
+                                                                            <% end %>
+                                                                          </span>
+                                                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                  </button></a><br>
+                                                                  <%end%><%end%>
+                                                                </td>
+                                                              </tr>
+                                                            </table>
+
+                                                                <table>
+                                                                  <tr style="vertical-align:top">
+                                                                    <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                      <% @lec.each do |m| %>
+                                                                      <%if m.comline_id == 1%>
+                                                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                       <%=m.professor.name%><br>
+                                                                        <span class="star-rating supersmall">
+                                                                                <% 1.upto(5) do |i| %>
+                                                                                  <% if i == m.avg.round(0) %>
+                                                                                    <i class="on"></i>
+                                                                                  <% else %>
+                                                                                    <i></i>
+                                                                                  <% end %>
+                                                                                <% end %>
+                                                                              </span>
+                                                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                      </button></a><br>
+                                                                      <%end%><%end%>
+                                                                    </td>
+                                                                    <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                      <% @lec.each do |m| %>
+                                                                      <%if m.comline_id == 2%>
+                                                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                       <%=m.professor.name%><br>
+                                                                        <span class="star-rating supersmall">
+                                                                                <% 1.upto(5) do |i| %>
+                                                                                  <% if i == m.avg.round(0) %>
+                                                                                    <i class="on"></i>
+                                                                                  <% else %>
+                                                                                    <i></i>
+                                                                                  <% end %>
+                                                                                <% end %>
+                                                                              </span>
+                                                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                      </button></a><br>
+                                                                      <%end%><%end%>
+                                                                    </td>
+                                                                    <td style="padding-left:10px; width:250px; ">
+                                                                      <% @lec.each do |m| %>
+                                                                      <%if m.comline_id == 3%>
+                                                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                       <%=m.professor.name%><br>
+                                                                        <span class="star-rating supersmall">
+                                                                                <% 1.upto(5) do |i| %>
+                                                                                  <% if i == m.avg.round(0) %>
+                                                                                    <i class="on"></i>
+                                                                                  <% else %>
+                                                                                    <i></i>
+                                                                                  <% end %>
+                                                                                <% end %>
+                                                                              </span>
+                                                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                      </button></a><br>
+                                                                      <%end%><%end%>
+                                                                    </td>
+                                                                  </tr>
+                                                                </table>
+
+
+                                                                    <table>
+                                                                      <tr style="vertical-align:top">
+                                                                        <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                          <% @lec.each do |m| %>
+                                                                          <%if m.gpline_id == 1%>
+                                                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                           <%=m.professor.name%><br>
+                                                                            <span class="star-rating supersmall">
+                                                                                    <% 1.upto(5) do |i| %>
+                                                                                      <% if i == m.avg.round(0) %>
+                                                                                        <i class="on"></i>
+                                                                                      <% else %>
+                                                                                        <i></i>
+                                                                                      <% end %>
+                                                                                    <% end %>
+                                                                                  </span>
+                                                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                          </button></a><br>
+                                                                          <%end%><%end%>
+                                                                        </td>
+                                                                        <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                          <% @lec.each do |m| %>
+                                                                          <%if m.gpline_id == 2%>
+                                                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                           <%=m.professor.name%><br>
+                                                                            <span class="star-rating supersmall">
+                                                                                    <% 1.upto(5) do |i| %>
+                                                                                      <% if i == m.avg.round(0) %>
+                                                                                        <i class="on"></i>
+                                                                                      <% else %>
+                                                                                        <i></i>
+                                                                                      <% end %>
+                                                                                    <% end %>
+                                                                                  </span>
+                                                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                          </button></a><br>
+                                                                          <%end%><%end%>
+                                                                        </td>
+                                                                        <td style="padding-left:10px; width:250px; ">
+                                                                          <% @lec.each do |m| %>
+                                                                          <%if m.gpline_id == 3%>
+                                                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                           <%=m.professor.name%><br>
+                                                                            <span class="star-rating supersmall">
+                                                                                    <% 1.upto(5) do |i| %>
+                                                                                      <% if i == m.avg.round(0) %>
+                                                                                        <i class="on"></i>
+                                                                                      <% else %>
+                                                                                        <i></i>
+                                                                                      <% end %>
+                                                                                    <% end %>
+                                                                                  </span>
+                                                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                          </button></a><br>
+                                                                          <%end%><%end%>
+                                                                        </td>
+                                                                      </tr>
+                                                                    </table>
+
+
+                                                                        <table>
+                                                                          <tr style="vertical-align:top">
+                                                                            <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                              <% @lec.each do |m| %>
+                                                                              <%if m.chaline_id == 1%>
+                                                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                               <%=m.professor.name%><br>
+                                                                                <span class="star-rating supersmall">
+                                                                                        <% 1.upto(5) do |i| %>
+                                                                                          <% if i == m.avg.round(0) %>
+                                                                                            <i class="on"></i>
+                                                                                          <% else %>
+                                                                                            <i></i>
+                                                                                          <% end %>
+                                                                                        <% end %>
+                                                                                      </span>
+                                                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                              </button></a><br>
+                                                                              <%end%><%end%>
+                                                                            </td>
+                                                                            <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                              <% @lec.each do |m| %>
+                                                                              <%if m.chaline_id == 2%>
+                                                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                               <%=m.professor.name%><br>
+                                                                                <span class="star-rating supersmall">
+                                                                                        <% 1.upto(5) do |i| %>
+                                                                                          <% if i == m.avg.round(0) %>
+                                                                                            <i class="on"></i>
+                                                                                          <% else %>
+                                                                                            <i></i>
+                                                                                          <% end %>
+                                                                                        <% end %>
+                                                                                      </span>
+                                                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                              </button></a><br>
+                                                                              <%end%><%end%>
+                                                                            </td>
+                                                                            <td style="padding-left:10px; width:250px; ">
+                                                                              <% @lec.each do |m| %>
+                                                                              <%if m.chaline_id == 3%>
+                                                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                               <%=m.professor.name%><br>
+                                                                                <span class="star-rating supersmall">
+                                                                                        <% 1.upto(5) do |i| %>
+                                                                                          <% if i == m.avg.round(0) %>
+                                                                                            <i class="on"></i>
+                                                                                          <% else %>
+                                                                                            <i></i>
+                                                                                          <% end %>
+                                                                                        <% end %>
+                                                                                      </span>
+                                                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                              </button></a><br>
+                                                                              <%end%><%end%>
+                                                                            </td>
+                                                                          </tr>
+                                                                        </table>
+
+
+                                                                            <table>
+                                                                              <tr style="vertical-align:top">
+                                                                                <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                                  <% @lec.each do |m| %>
+                                                                                  <%if m.ksline_id == 1%>
+                                                                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                   <%=m.professor.name%><br>
+                                                                                    <span class="star-rating supersmall">
+                                                                                            <% 1.upto(5) do |i| %>
+                                                                                              <% if i == m.avg.round(0) %>
+                                                                                                <i class="on"></i>
+                                                                                              <% else %>
+                                                                                                <i></i>
+                                                                                              <% end %>
+                                                                                            <% end %>
+                                                                                          </span>
+                                                                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                  </button></a><br>
+                                                                                  <%end%><%end%>
+                                                                                </td>
+                                                                                <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                                  <% @lec.each do |m| %>
+                                                                                  <%if m.ksline_id == 2%>
+                                                                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                   <%=m.professor.name%><br>
+                                                                                    <span class="star-rating supersmall">
+                                                                                            <% 1.upto(5) do |i| %>
+                                                                                              <% if i == m.avg.round(0) %>
+                                                                                                <i class="on"></i>
+                                                                                              <% else %>
+                                                                                                <i></i>
+                                                                                              <% end %>
+                                                                                            <% end %>
+                                                                                          </span>
+                                                                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                  </button></a><br>
+                                                                                  <%end%><%end%>
+                                                                                </td>
+                                                                                <td style="padding-left:10px; width:250px; ">
+                                                                                  <% @lec.each do |m| %>
+                                                                                  <%if m.ksline_id == 3%>
+                                                                                  <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                   <%=m.professor.name%><br>
+                                                                                    <span class="star-rating supersmall">
+                                                                                            <% 1.upto(5) do |i| %>
+                                                                                              <% if i == m.avg.round(0) %>
+                                                                                                <i class="on"></i>
+                                                                                              <% else %>
+                                                                                                <i></i>
+                                                                                              <% end %>
+                                                                                            <% end %>
+                                                                                          </span>
+                                                                                    <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                  </button></a><br>
+                                                                                  <%end%><%end%>
+                                                                                </td>
+                                                                              </tr>
+                                                                            </table>
+
+
+                                                                                <table>
+                                                                                  <tr style="vertical-align:top">
+                                                                                    <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                                      <% @lec.each do |m| %>
+                                                                                      <%if m.kiline_id == 1%>
+                                                                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                       <%=m.professor.name%><br>
+                                                                                        <span class="star-rating supersmall">
+                                                                                                <% 1.upto(5) do |i| %>
+                                                                                                  <% if i == m.avg.round(0) %>
+                                                                                                    <i class="on"></i>
+                                                                                                  <% else %>
+                                                                                                    <i></i>
+                                                                                                  <% end %>
+                                                                                                <% end %>
+                                                                                              </span>
+                                                                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                      </button></a><br>
+                                                                                      <%end%><%end%>
+                                                                                    </td>
+                                                                                    <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                                      <% @lec.each do |m| %>
+                                                                                      <%if m.kiline_id == 2%>
+                                                                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                       <%=m.professor.name%><br>
+                                                                                        <span class="star-rating supersmall">
+                                                                                                <% 1.upto(5) do |i| %>
+                                                                                                  <% if i == m.avg.round(0) %>
+                                                                                                    <i class="on"></i>
+                                                                                                  <% else %>
+                                                                                                    <i></i>
+                                                                                                  <% end %>
+                                                                                                <% end %>
+                                                                                              </span>
+                                                                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                      </button></a><br>
+                                                                                      <%end%><%end%>
+                                                                                    </td>
+                                                                                    <td style="padding-left:10px; width:250px; ">
+                                                                                      <% @lec.each do |m| %>
+                                                                                      <%if m.kiline_id == 3%>
+                                                                                      <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                       <%=m.professor.name%><br>
+                                                                                        <span class="star-rating supersmall">
+                                                                                                <% 1.upto(5) do |i| %>
+                                                                                                  <% if i == m.avg.round(0) %>
+                                                                                                    <i class="on"></i>
+                                                                                                  <% else %>
+                                                                                                    <i></i>
+                                                                                                  <% end %>
+                                                                                                <% end %>
+                                                                                              </span>
+                                                                                        <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                      </button></a><br>
+                                                                                      <%end%><%end%>
+                                                                                    </td>
+                                                                                  </tr>
+                                                                                </table>
+
+
+                                                                                    <table>
+                                                                                      <tr style="vertical-align:top">
+                                                                                        <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                                          <% @lec.each do |m| %>
+                                                                                          <%if m.kjline_id == 1%>
+                                                                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                           <%=m.professor.name%><br>
+                                                                                            <span class="star-rating supersmall">
+                                                                                                    <% 1.upto(5) do |i| %>
+                                                                                                      <% if i == m.avg.round(0) %>
+                                                                                                        <i class="on"></i>
+                                                                                                      <% else %>
+                                                                                                        <i></i>
+                                                                                                      <% end %>
+                                                                                                    <% end %>
+                                                                                                  </span>
+                                                                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                          </button></a><br>
+                                                                                          <%end%><%end%>
+                                                                                        </td>
+                                                                                        <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                                          <% @lec.each do |m| %>
+                                                                                          <%if m.kjline_id == 2%>
+                                                                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                           <%=m.professor.name%><br>
+                                                                                            <span class="star-rating supersmall">
+                                                                                                    <% 1.upto(5) do |i| %>
+                                                                                                      <% if i == m.avg.round(0) %>
+                                                                                                        <i class="on"></i>
+                                                                                                      <% else %>
+                                                                                                        <i></i>
+                                                                                                      <% end %>
+                                                                                                    <% end %>
+                                                                                                  </span>
+                                                                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                          </button></a><br>
+                                                                                          <%end%><%end%>
+                                                                                        </td>
+                                                                                        <td style="padding-left:10px; width:250px; ">
+                                                                                          <% @lec.each do |m| %>
+                                                                                          <%if m.kjline_id == 3%>
+                                                                                          <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                           <%=m.professor.name%><br>
+                                                                                            <span class="star-rating supersmall">
+                                                                                                    <% 1.upto(5) do |i| %>
+                                                                                                      <% if i == m.avg.round(0) %>
+                                                                                                        <i class="on"></i>
+                                                                                                      <% else %>
+                                                                                                        <i></i>
+                                                                                                      <% end %>
+                                                                                                    <% end %>
+                                                                                                  </span>
+                                                                                            <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                          </button></a><br>
+                                                                                          <%end%><%end%>
+                                                                                        </td>
+                                                                                      </tr>
+                                                                                    </table>
+
+
+                                                                                        <table>
+                                                                                          <tr style="vertical-align:top">
+                                                                                            <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                                              <% @lec.each do |m| %>
+                                                                                              <%if m.sjline_id == 1%>
+                                                                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                               <%=m.professor.name%><br>
+                                                                                                <span class="star-rating supersmall">
+                                                                                                        <% 1.upto(5) do |i| %>
+                                                                                                          <% if i == m.avg.round(0) %>
+                                                                                                            <i class="on"></i>
+                                                                                                          <% else %>
+                                                                                                            <i></i>
+                                                                                                          <% end %>
+                                                                                                        <% end %>
+                                                                                                      </span>
+                                                                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                              </button></a><br>
+                                                                                              <%end%><%end%>
+                                                                                            </td>
+                                                                                            <td style="padding-left:10px; width:250px; border-right:1px; padding-right:12px; text-align:justify; ">
+                                                                                              <% @lec.each do |m| %>
+                                                                                              <%if m.sjline_id == 2%>
+                                                                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                               <%=m.professor.name%><br>
+                                                                                                <span class="star-rating supersmall">
+                                                                                                        <% 1.upto(5) do |i| %>
+                                                                                                          <% if i == m.avg.round(0) %>
+                                                                                                            <i class="on"></i>
+                                                                                                          <% else %>
+                                                                                                            <i></i>
+                                                                                                          <% end %>
+                                                                                                        <% end %>
+                                                                                                      </span>
+                                                                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                              </button></a><br>
+                                                                                              <%end%><%end%>
+                                                                                            </td>
+                                                                                            <td style="padding-left:10px; width:250px; ">
+                                                                                            <% @lec.each do |m| %>
+                                                                                              <%if m.sjline_id == 3%>
+                                                                                              <a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+                                                                                               <%=m.professor.name%><br>
+                                                                                                <span class="star-rating supersmall">
+                                                                                                        <% 1.upto(5) do |i| %>
+                                                                                                          <% if i == m.avg.round(0) %>
+                                                                                                            <i class="on"></i>
+                                                                                                          <% else %>
+                                                                                                            <i></i>
+                                                                                                          <% end %>
+                                                                                                        <% end %>
+                                                                                                      </span>
+                                                                                                <%= m.avg.round(1)%> 점 (<%= m.stars.count%> 명)
+                                                                                              </button></a><br>
+                                                                                              <%end%><%end%>
+                                                                                            </td>
+                                                                                          </tr>
+                                                                                        </table>
+
+</div>
+  <div class="col-md-2"></div>
 </div>

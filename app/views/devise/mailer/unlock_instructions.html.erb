@@ -1,7 +1,7 @@
 <p>안녕하세요 <%= @resource.email %>!</p>
 
-<p>님 계정에 틀린 비밀번호를 입력해서 계정이 잠겼어용 ㅠ</p>
+<p>틀린 비밀번호를 입력하셔서 계정이 비활성화되었습니다.</p>
 
-<p>링크를 눌러서 계정을 다시 활성화 시켜주세요.:</p>
+<p>링크를 눌러서 계정을 다시 활성화 시켜주세요.</p>
 
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+<p><%= link_to '계정 활성화하기', unlock_url(@resource, unlock_token: @token) %></p>

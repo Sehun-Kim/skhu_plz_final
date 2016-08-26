@@ -1,12 +1,12 @@
 <br>
 <br>
-<h2>Resend unlock instructions</h2>
+<h2>잠긴 계정 활성화</h2>
 <br>
 
 <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
   <%= f.full_error :unlock_token %>
-  
+
   <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">  <div class="form-inputs">
@@ -18,7 +18,7 @@
   <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">  <div class="form-actions">
-    <%= f.button :submit, "Resend unlock instructions", class: 'btn btn-large btn-block btn-info' %>
+    <%= f.button :submit, "메일 다시 보내기", class: 'btn btn-large btn-block btn-info' %>
   </div></div>
   <div class="col-md-4"></div>
 </div>

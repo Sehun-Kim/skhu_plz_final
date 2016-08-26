@@ -44,8 +44,8 @@
 </table>
 
  <%= form_tag(postus_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-    <font color="#63645A"><%= submit_tag "Search" %></font>
+    <%= text_field_tag :search, params[:search], placeholder: "게시글 찾기" %>
+    <font color="#63645A"><%= submit_tag "검색" %></font>
     <% end %>
     <br>
 
