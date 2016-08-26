@@ -9,7 +9,8 @@ en:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: "잘못 입력하셨습니다."
+
     # Examples
     # labels:
     #   defaults:
