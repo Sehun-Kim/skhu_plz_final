@@ -1,6 +1,4 @@
 <style>
-      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
-      .ngc {font-family: 'Nanum Gothic Coding'; color:#333333;}
       .right {text-align:right; margin-top: 5px;}
       .margin {margin-bottom: 20px;}
       .titleline {border-left:0.5em solid #E0CB52; padding-left: 0.5em; font-size: 20px; text-align:left;}
@@ -49,13 +47,13 @@
 
   <table>
   <tr style="vertical-align:top">
-    <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; padding-bottom:10px;">    
+    <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; padding-bottom:10px;">
       <% @maj.each do |m| %>
       <%if m.line == 4%>
       <a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-default btn-lg btn-block ngc" style="margin-top:10px;"><%= m.name %></button></a>
       <%end%><%end%>
     </td>
-    <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; padding-bottom:10px;">    
+    <td style="width:250px; border-right:1px; padding-right:12px; text-align:justify; padding-bottom:10px;">
       <% @maj.each do |m| %>
       <%if m.line == 5%>
       <a href = "/home/show_major/<%=m.id%>"><button type="button" class="btn btn-default btn-lg btn-block ngc" style="margin-top:10px;"><%= m.name %></button></a>

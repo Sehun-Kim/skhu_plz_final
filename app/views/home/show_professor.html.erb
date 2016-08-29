@@ -1,13 +1,13 @@
 <br>
 <br>
 
-<div class="row">
+<div class="row ngc">
   <div class="col-md-4"></div>
   <div class="col-md-4">
-    
+
 
 <% @lec.each do |m| %>
-<a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><%= m.name %>
+<a href = "/lectures/<%=m.id%>/posts"><button type="button" class="btn btn-default btn-block"><strong><%= m.name %></strong>
  <%=m.professor.name%><br>
   <span class="star-rating supersmall">
           <% 1.upto(5) do |i| %>

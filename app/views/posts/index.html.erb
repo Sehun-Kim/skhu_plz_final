@@ -3,6 +3,7 @@
   .center {text-align:center; font-size: 35px;}
   .right {text-align:right;}
   .titleline {border-left:0.5em solid #E0CB52; padding-left: 0.5em; font-size: 20px; text-align:left;}
+  .prosize {padding-left:5px; font-size: 15px;}
 </style>
 
 
@@ -13,7 +14,7 @@
   <div class="col-md-1"></div>
   <div class="col-md-10">
     <div class="test1">
-      <h3 class="ngc margin titleline"><%= @lecture.name %>  <span class="right"><a href="/home/show_professor/<%=@lecture.professor_id%>"><%= @lecture.professor.name %></a>교수님</span></h3>
+      <h3 class="ngc margin titleline"><%= @lecture.name %><a href="/home/show_professor/<%=@lecture.professor_id%>"><span class="prosize"><%= @lecture.professor.name %>교수님</span></a></h3>
       <span class="right"><%= render :partial => "stars/star" %></span>
 
 
