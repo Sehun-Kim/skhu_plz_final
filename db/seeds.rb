@@ -15,6 +15,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+
 Major.create(name: '경영학부', liberal: '0', line: '1')
 Major.create(name: '글로컬IT학과', liberal: '0', line: '2')
 Major.create(name: '디지털컨텐츠학과', liberal: '0', line: '3')
