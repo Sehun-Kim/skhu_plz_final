@@ -16,16 +16,16 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = {host:'localhost:3000'}
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :authentication => :plain,
-    :address => "smtp.mailgun.org",
-    :port => 587,
-    :domain => "sandbox06381d23e1eb4ddbbfd1e77600ba35fe.mailgun.org",
-    :user_name => ,
-    :password => 
-                                        }
+# config.action_mailer.default_url_options = {host:'localhost:3000'}
+#  config.action_mailer.delivery_method = :smtp
+#  config.action_mailer.smtp_settings = {
+#    :authentication => :plain,
+#    :address => "smtp.mailgun.org",
+#    :port => 587,
+#    :domain => "sandbox06381d23e1eb4ddbbfd1e77600ba35fe.mailgun.org",
+#    :user_name => ,
+#    :password =>
+#  } 
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
