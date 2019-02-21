@@ -16,4 +16,5 @@
 !/log/.keep
 *.swp
 
+.DS_Store
 /tmp
