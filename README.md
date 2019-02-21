@@ -17,6 +17,8 @@
 4. 강의명, 교수명 검색 기능
 5. 게시글 좋아요 기능
 
+### Table Schema
+![Skhubee_DB_Schema](https://raw.githubusercontent.com/Sehun-Kim/skhu_plz_final/master/Skhubee_DB_Table.jpg)
 
 
 
